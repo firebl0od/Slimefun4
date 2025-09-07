@@ -90,6 +90,12 @@ public class UpdaterService {
         this.updater = autoUpdater;
     }
 
+    UpdaterService(@Nonnull Slimefun plugin, PluginUpdater<PrefixedVersion> updater, SlimefunBranch branch) {
+        this.plugin = plugin;
+        this.updater = updater;
+        this.branch = branch;
+    }
+
     /**
      * This method returns the branch the current build of Slimefun is running on.
      * This can be used to determine whether we are dealing with an official build
@@ -132,12 +138,15 @@ public class UpdaterService {
     }
 
     public boolean isLatestVersion() {
-        if (getBuildNumber() == -1 || getLatestVersion() == -1) {
+        int current = getBuildNumber();
+        int latest = getLatestVersion();
+
+        if (current == -1 || latest == -1) {
             // We don't know if we're latest so just report we are
             return true;
         }
-        
-        return getBuildNumber() == getLatestVersion();
+
+        return current == latest;
     }
 
     /**
