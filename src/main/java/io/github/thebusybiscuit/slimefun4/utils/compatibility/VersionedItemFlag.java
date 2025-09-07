@@ -11,8 +11,9 @@ import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 public class VersionedItemFlag {
-    
+
     public static final ItemFlag HIDE_ADDITIONAL_TOOLTIP;
+    public static final ItemFlag HIDE_TOOLTIP;
 
     static {
         MinecraftVersion version = Slimefun.getMinecraftVersion();
@@ -20,6 +21,10 @@ public class VersionedItemFlag {
         HIDE_ADDITIONAL_TOOLTIP = version.isAtLeast(MinecraftVersion.MINECRAFT_1_20_5)
             ? ItemFlag.HIDE_ADDITIONAL_TOOLTIP
             : getKey("HIDE_POTION_EFFECTS");
+
+        HIDE_TOOLTIP = version.isAtLeast(MinecraftVersion.MINECRAFT_1_21)
+            ? ItemFlag.HIDE_TOOLTIP
+            : HIDE_ADDITIONAL_TOOLTIP;
     }
 
     @Nullable
