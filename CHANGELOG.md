@@ -40,6 +40,12 @@
 
 ## Release Candidate 38 (TBD)
 
+#### Additions
+* Produce Collector can brush Armadillos for Armadillo Scutes on 1.21+
+
+#### Changes
+* Restrict Minecraft 1.21 support to patches up to 1.21.7
+
 ## Release Candidate 37 (25 Feb 2024)
 
 #### Additions

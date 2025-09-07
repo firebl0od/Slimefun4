@@ -33,6 +33,7 @@ import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEntityType;
 
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
@@ -77,6 +78,17 @@ public class ProduceCollector extends AContainer implements RecipeDisplayItem {
         addProduce(new AnimalProduce(new ItemStack(Material.BOWL), new ItemStack(Material.MUSHROOM_STEW), n -> {
             if (n instanceof MushroomCow mushroomCow) {
                 return mushroomCow.isAdult();
+            } else {
+                return false;
+            }
+        }));
+
+        // Armadillo Scutes from Armadillos
+        addProduce(new AnimalProduce(new ItemStack(Material.BRUSH), new ItemStack(Material.ARMADILLO_SCUTE), n -> {
+            if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_21)
+                && n.getType() == VersionedEntityType.ARMADILLO
+                && n instanceof Ageable ageable) {
+                return ageable.isAdult();
             } else {
                 return false;
             }
@@ -126,6 +138,11 @@ public class ProduceCollector extends AContainer implements RecipeDisplayItem {
 
         displayRecipes.add(new CustomItemStack(Material.BOWL, null, "&fRequires &bMooshroom &fnearby"));
         displayRecipes.add(new ItemStack(Material.MUSHROOM_STEW));
+
+        if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_21)) {
+            displayRecipes.add(new CustomItemStack(Material.BRUSH, null, "&fRequires &bArmadillo &fnearby"));
+            displayRecipes.add(new ItemStack(Material.ARMADILLO_SCUTE));
+        }
 
         return displayRecipes;
     }
