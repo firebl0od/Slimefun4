@@ -54,6 +54,7 @@ class TestCraftingTableListener {
         Player player = server.addPlayer();
 
         CraftingInventory inv = Mockito.mock(CraftingInventory.class);
+        Mockito.when(inv.getType()).thenReturn(org.bukkit.event.inventory.InventoryType.CRAFTING);
         Mockito.when(inv.getContents()).thenReturn(new ItemStack[] { item, null, null, null, null, null, null, null, null });
 
         InventoryView view = player.openInventory(inv);
@@ -67,6 +68,7 @@ class TestCraftingTableListener {
         Player player = server.addPlayer();
 
         CraftingInventory inv = Mockito.mock(CraftingInventory.class);
+        Mockito.when(inv.getType()).thenReturn(org.bukkit.event.inventory.InventoryType.CRAFTING);
         MutableObject result = new MutableObject(new ItemStack(Material.EMERALD));
 
         Mockito.doAnswer(invocation -> {
