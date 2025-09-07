@@ -62,11 +62,6 @@
     <!-- Well, any that aren't found on maven-central. -->
     <repositories>
         <repository>
-            <!-- Spigot-API -->
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots</url>
-        </repository>
-        <repository>
             <!-- PaperLib -->
             <id>paper-repo</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>

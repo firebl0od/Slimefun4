@@ -36,7 +36,7 @@ public class VersionedItemFlag {
             : getKey("HIDE_POTION_EFFECTS");
 
         HIDE_TOOLTIP = version.isAtLeast(MinecraftVersion.MINECRAFT_1_21)
-            ? ItemFlag.HIDE_TOOLTIP
+            ? getKey("HIDE_TOOLTIP")
             : HIDE_ADDITIONAL_TOOLTIP;
 
         HIDE_VILLAGER_VARIANT = getKey("HIDE_VILLAGER_VARIANT");
