@@ -66,6 +66,8 @@ public final class SlimefunItems {
 
     public static final SlimefunItemStack WOLF_ARMOR = new SlimefunItemStack("WOLF_ARMOR", Material.WOLF_ARMOR, "&6Wolf Armor");
     public static final SlimefunItemStack BREEZE_ROD = new SlimefunItemStack("BREEZE_ROD", Material.BREEZE_ROD, "&bBreeze Rod");
+    public static final SlimefunItemStack HEAVY_CORE = new SlimefunItemStack("HEAVY_CORE", Material.HEAVY_CORE, "&6Heavy Core");
+    public static final SlimefunItemStack MACE = new SlimefunItemStack("MACE", Material.MACE, "&6Mace");
 
     public static final SlimefunItemStack FLASK_OF_KNOWLEDGE = new SlimefunItemStack("FLASK_OF_KNOWLEDGE", Material.GLASS_BOTTLE, "&cFlask of Knowledge", "", "&fAllows you to store some of", "&fyour Experience in a Bottle", "&7Cost: &a1 Level");
     public static final SlimefunItemStack FILLED_FLASK_OF_KNOWLEDGE = new SlimefunItemStack("FILLED_FLASK_OF_KNOWLEDGE", Material.EXPERIENCE_BOTTLE, "&aFlask of Knowledge");

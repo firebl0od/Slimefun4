@@ -2129,6 +2129,18 @@ public final class SlimefunItemSetup {
             new ItemStack(Material.DEEPSLATE_BRICKS), new ItemStack(Material.TRIAL_KEY), new ItemStack(Material.DEEPSLATE_BRICKS)})
         .register(plugin);
 
+        new VanillaItem(itemGroups.magicalResources, new ItemStack(Material.HEAVY_CORE), "HEAVY_CORE", RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.IRON_BLOCK),
+            new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.NETHERITE_INGOT), new ItemStack(Material.IRON_BLOCK),
+            new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.IRON_BLOCK)})
+        .register(plugin);
+
+        new VanillaItem(itemGroups.weapons, new ItemStack(Material.MACE), "MACE", RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {null, SlimefunItems.BREEZE_ROD, null,
+            null, SlimefunItems.HEAVY_CORE, null,
+            null, null, null})
+        .register(plugin);
+
         new VanillaItem(itemGroups.armor, new ItemStack(Material.WOLF_ARMOR), "WOLF_ARMOR", RecipeType.ARMOR_FORGE,
         new ItemStack[] {new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE),
             null, new ItemStack(Material.ARMADILLO_SCUTE), null,
