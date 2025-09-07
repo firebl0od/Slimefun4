@@ -109,5 +109,9 @@ public class ButcherAndroidListener implements Listener {
                 drops.add(new ItemStack(Material.WIND_CHARGE));
             }
         }
+
+        if (entityType == VersionedEntityType.CREAKING) {
+            drops.add(new ItemStack(Material.CREAKING_HEART));
+        }
     }
 }
