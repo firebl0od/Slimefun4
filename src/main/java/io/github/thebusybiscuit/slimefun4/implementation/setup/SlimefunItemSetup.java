@@ -2124,23 +2124,17 @@ public final class SlimefunItemSetup {
                     new ItemStack(Material.SLIME_BALL), new ItemStack(Material.GLASS_BOTTLE), new ItemStack(Material.SLIME_BALL),
                     null, new ItemStack(Material.FERMENTED_SPIDER_EYE), null})
                 .register(plugin);
-        new VanillaItem(itemGroups.magicalResources, SlimefunItems.WIND_CHARGE, "WIND_CHARGE", RecipeType.MOB_DROP,
-        new ItemStack[] {null, null, null, null, new CustomItemStack(new ItemStack(Material.BREEZE_SPAWN_EGG), "&aBreeze"), null, null, null, null})
-        .register(plugin);
+            new VanillaItem(itemGroups.magicalResources, SlimefunItems.WIND_CHARGE, "WIND_CHARGE", RecipeType.MOB_DROP,
+                new ItemStack[] {null, null, null, null, new CustomItemStack(new ItemStack(Material.BREEZE_SPAWN_EGG), "&aBreeze"), null, null, null, null})
+                .register(plugin);
 
-        new VanillaItem(itemGroups.magicalResources, SlimefunItems.ARMADILLO_SCUTE, "ARMADILLO_SCUTE", RecipeType.MOB_DROP,
-        new ItemStack[] {null, null, null, null, new CustomItemStack(new ItemStack(Material.ARMADILLO_SPAWN_EGG), "&aArmadillo"), null, null, null, null})
-        .register(plugin);
+            new VanillaItem(itemGroups.magicalResources, SlimefunItems.ARMADILLO_SCUTE, "ARMADILLO_SCUTE", RecipeType.MOB_DROP,
+                new ItemStack[] {null, null, null, null, new CustomItemStack(new ItemStack(Material.ARMADILLO_SPAWN_EGG), "&aArmadillo"), null, null, null, null})
+                .register(plugin);
 
-        new VanillaItem(itemGroups.magicalResources, SlimefunItems.CREAKING_HEART, "CREAKING_HEART", RecipeType.MOB_DROP,
-        new ItemStack[] {null, null, null, null, new CustomItemStack(new ItemStack(Material.CREAKING_SPAWN_EGG), "&aCreaking"), null, null, null, null})
-        .register(plugin);
-
-        new VanillaItem(itemGroups.magicalResources, new ItemStack(Material.OMINOUS_BOTTLE), "OMINOUS_BOTTLE", RecipeType.MAGIC_WORKBENCH,
-        new ItemStack[] {new ItemStack(Material.COBWEB), new ItemStack(Material.BREEZE_ROD), new ItemStack(Material.COBWEB),
-            new ItemStack(Material.SLIME_BALL), new ItemStack(Material.GLASS_BOTTLE), new ItemStack(Material.SLIME_BALL),
-            null, new ItemStack(Material.FERMENTED_SPIDER_EYE), null})
-        .register(plugin);
+            new VanillaItem(itemGroups.magicalResources, SlimefunItems.CREAKING_HEART, "CREAKING_HEART", RecipeType.MOB_DROP,
+                new ItemStack[] {null, null, null, null, new CustomItemStack(new ItemStack(Material.CREAKING_SPAWN_EGG), "&aCreaking"), null, null, null, null})
+                .register(plugin);
 
             new VanillaItem(itemGroups.magicalResources, new ItemStack(trialKey), "TRIAL_KEY", RecipeType.MAGIC_WORKBENCH,
                 new ItemStack[] {new ItemStack(Material.GOLD_INGOT), SlimefunItems.BREEZE_ROD, new ItemStack(Material.GOLD_INGOT),
