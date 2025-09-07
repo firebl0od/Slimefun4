@@ -99,6 +99,10 @@ public class ButcherAndroidListener implements Listener {
             drops.add(new ItemStack(Material.RED_MUSHROOM, 1 + random.nextInt(2)));
         }
 
+        if (entityType == VersionedEntityType.ARMADILLO) {
+            drops.add(new ItemStack(Material.ARMADILLO_SCUTE, 1 + random.nextInt(2)));
+        }
+
         if (entityType == VersionedEntityType.BREEZE) {
             drops.add(new ItemStack(Material.BREEZE_ROD));
             if (random.nextInt(3) == 0) {
