@@ -1,6 +1,7 @@
 package io.github.thebusybiscuit.slimefun4.utils;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +11,7 @@ import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEff
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionType;
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedItemFlag;
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
+import org.bukkit.Particle;
 
 class TestVersionedCompatibility {
 
@@ -52,16 +54,25 @@ class TestVersionedCompatibility {
 
     @Test
     void testNewParticles() {
-        assertNotNull(VersionedParticle.BREEZE_WIND);
-        assertNotNull(VersionedParticle.TRIAL_SPAWNER_DETECTION);
-        assertNotNull(VersionedParticle.TRIAL_SPAWNER_DETECTION_OMINOUS);
-        assertNotNull(VersionedParticle.TRIAL_SPAWNER_EJECTION);
-        assertNotNull(VersionedParticle.TRIAL_SPAWNER_EJECTION_OMINOUS);
-        assertNotNull(VersionedParticle.TRIAL_SPAWNER_SMOKE);
-        assertNotNull(VersionedParticle.TRIAL_SPAWNER_SMOKE_OMINOUS);
-        assertNotNull(VersionedParticle.GUST);
-        assertNotNull(VersionedParticle.SMALL_GUST);
-        assertNotNull(VersionedParticle.GUST_EMITTER_LARGE);
-        assertNotNull(VersionedParticle.GUST_EMITTER_SMALL);
+        assertParticle("BREEZE_WIND", VersionedParticle.BREEZE_WIND);
+        assertParticle("TRIAL_SPAWNER_DETECTION", VersionedParticle.TRIAL_SPAWNER_DETECTION);
+        assertParticle("TRIAL_SPAWNER_DETECTION_OMINOUS", VersionedParticle.TRIAL_SPAWNER_DETECTION_OMINOUS);
+        assertParticle("TRIAL_SPAWNER_EJECTION", VersionedParticle.TRIAL_SPAWNER_EJECTION);
+        assertParticle("TRIAL_SPAWNER_EJECTION_OMINOUS", VersionedParticle.TRIAL_SPAWNER_EJECTION_OMINOUS);
+        assertParticle("TRIAL_SPAWNER_SMOKE", VersionedParticle.TRIAL_SPAWNER_SMOKE);
+        assertParticle("TRIAL_SPAWNER_SMOKE_OMINOUS", VersionedParticle.TRIAL_SPAWNER_SMOKE_OMINOUS);
+        assertParticle("GUST", VersionedParticle.GUST);
+        assertParticle("SMALL_GUST", VersionedParticle.SMALL_GUST);
+        assertParticle("GUST_EMITTER_LARGE", VersionedParticle.GUST_EMITTER_LARGE);
+        assertParticle("GUST_EMITTER_SMALL", VersionedParticle.GUST_EMITTER_SMALL);
+    }
+
+    private void assertParticle(String field, Particle particle) {
+        try {
+            Particle.class.getDeclaredField(field);
+            assertNotNull(particle);
+        } catch (NoSuchFieldException e) {
+            assertNull(particle);
+        }
     }
 }
