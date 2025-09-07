@@ -39,8 +39,7 @@ class TestUpdaterService {
         UpdaterService service = new UpdaterService(plugin, "Dev - 131 (git 123456)", file);
         Assertions.assertEquals(SlimefunBranch.DEVELOPMENT, service.getBranch());
         Assertions.assertTrue(service.getBranch().isOfficial());
-        // Cannot currently be tested... yay
-        // Assertions.assertEquals(131, service.getBuildNumber());
+        Assertions.assertEquals(131, service.getBuildNumber());
     }
 
     @Test
@@ -49,8 +48,15 @@ class TestUpdaterService {
         UpdaterService service = new UpdaterService(plugin, "RC - 6 (git 123456)", file);
         Assertions.assertEquals(SlimefunBranch.STABLE, service.getBranch());
         Assertions.assertTrue(service.getBranch().isOfficial());
-        // Cannot currently be tested... yay
-        // Assertions.assertEquals(6, service.getBuildNumber());
+        Assertions.assertEquals(6, service.getBuildNumber());
+    }
+
+    @Test
+    @DisplayName("Test build parsing with invalid number")
+    void testInvalidBuildNumber() {
+        UpdaterService service = new UpdaterService(plugin, "Dev - abc", file);
+        Assertions.assertEquals(SlimefunBranch.DEVELOPMENT, service.getBranch());
+        Assertions.assertEquals(-1, service.getBuildNumber());
     }
 
     @Test

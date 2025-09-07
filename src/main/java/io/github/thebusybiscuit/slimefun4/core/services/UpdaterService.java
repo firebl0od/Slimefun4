@@ -1,13 +1,14 @@
 package io.github.thebusybiscuit.slimefun4.core.services;
 
 import java.io.File;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
 
 import io.github.bakedlibs.dough.updater.BlobBuildUpdater;
-import org.bukkit.plugin.Plugin;
 
 import io.github.bakedlibs.dough.config.Config;
 import io.github.bakedlibs.dough.updater.PluginUpdater;
@@ -36,6 +37,13 @@ public class UpdaterService {
     private final PluginUpdater<PrefixedVersion> updater;
 
     /**
+     * The version string passed to this service.
+     */
+    private final String version;
+
+    private static final Pattern BUILD_PATTERN = Pattern.compile("^(?:Dev|RC) - (\\d+)");
+
+    /**
      * The {@link SlimefunBranch} we are currently on.
      * If this is an official {@link SlimefunBranch}, auto updates will be enabled.
      */
@@ -54,6 +62,7 @@ public class UpdaterService {
      */
     public UpdaterService(@Nonnull Slimefun plugin, @Nonnull String version, @Nonnull File file) {
         this.plugin = plugin;
+        this.version = version;
         BlobBuildUpdater autoUpdater = null;
 
         if (version.contains("UNOFFICIAL")) {
@@ -115,9 +124,9 @@ public class UpdaterService {
      * @return The build number of this Slimefun.
      */
     public int getBuildNumber() {
-        if (updater != null) {
-            PrefixedVersion version = updater.getCurrentVersion();
-            return version.getVersionNumber();
+        Matcher matcher = BUILD_PATTERN.matcher(version);
+        if (matcher.find()) {
+            return Integer.parseInt(matcher.group(1));
         }
 
         return -1;
