@@ -61,6 +61,9 @@
 #### Changes
 * Restrict Minecraft 1.21 support to patches up to 1.21.8
 
+#### Fixes
+* Use matchMaterial for 1.21 item stacks to maintain backwards compatibility
+
 ## Release Candidate 37 (25 Feb 2024)
 
 #### Additions

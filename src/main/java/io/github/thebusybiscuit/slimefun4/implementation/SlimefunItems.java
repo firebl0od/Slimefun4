@@ -79,13 +79,18 @@ public final class SlimefunItems {
         "MACE",
         Material.matchMaterial("MACE") == null ? Material.DIAMOND_SWORD : Material.matchMaterial("MACE"),
         "&6Mace");
-    public static final SlimefunItemStack WOLF_ARMOR = new SlimefunItemStack("WOLF_ARMOR", Material.WOLF_ARMOR, "&6Wolf Armor");
-    public static final SlimefunItemStack BREEZE_ROD = new SlimefunItemStack("BREEZE_ROD", Material.BREEZE_ROD, "&bBreeze Rod");
-    public static final SlimefunItemStack WIND_CHARGE = new SlimefunItemStack("WIND_CHARGE", Material.WIND_CHARGE, "&bWind Charge");
-    public static final SlimefunItemStack ARMADILLO_SCUTE = new SlimefunItemStack("ARMADILLO_SCUTE", Material.ARMADILLO_SCUTE, "&6Armadillo Scute");
-    public static final SlimefunItemStack CREAKING_HEART = new SlimefunItemStack("CREAKING_HEART", Material.CREAKING_HEART, "&cCreaking Heart");
-    public static final SlimefunItemStack HEAVY_CORE = new SlimefunItemStack("HEAVY_CORE", Material.HEAVY_CORE, "&6Heavy Core");
-    public static final SlimefunItemStack MACE = new SlimefunItemStack("MACE", Material.MACE, "&6Mace");
+    public static final SlimefunItemStack WIND_CHARGE = new SlimefunItemStack(
+        "WIND_CHARGE",
+        Material.matchMaterial("WIND_CHARGE") == null ? Material.FIRE_CHARGE : Material.matchMaterial("WIND_CHARGE"),
+        "&bWind Charge");
+    public static final SlimefunItemStack ARMADILLO_SCUTE = new SlimefunItemStack(
+        "ARMADILLO_SCUTE",
+        Material.matchMaterial("ARMADILLO_SCUTE") == null ? Material.TURTLE_SCUTE : Material.matchMaterial("ARMADILLO_SCUTE"),
+        "&6Armadillo Scute");
+    public static final SlimefunItemStack CREAKING_HEART = new SlimefunItemStack(
+        "CREAKING_HEART",
+        Material.matchMaterial("CREAKING_HEART") == null ? Material.GHAST_TEAR : Material.matchMaterial("CREAKING_HEART"),
+        "&cCreaking Heart");
     public static final SlimefunItemStack FLASK_OF_KNOWLEDGE = new SlimefunItemStack("FLASK_OF_KNOWLEDGE", Material.GLASS_BOTTLE, "&cFlask of Knowledge", "", "&fAllows you to store some of", "&fyour Experience in a Bottle", "&7Cost: &a1 Level");
     public static final SlimefunItemStack FILLED_FLASK_OF_KNOWLEDGE = new SlimefunItemStack("FILLED_FLASK_OF_KNOWLEDGE", Material.EXPERIENCE_BOTTLE, "&aFlask of Knowledge");
 
