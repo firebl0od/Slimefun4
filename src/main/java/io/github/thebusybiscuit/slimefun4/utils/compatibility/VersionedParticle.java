@@ -21,6 +21,10 @@ public class VersionedParticle {
     public static final Particle WITCH;
     public static final Particle FIREWORK;
     public static final Particle ENCHANT;
+    public static final Particle GUST;
+    public static final Particle SMALL_GUST;
+    public static final Particle GUST_EMITTER_LARGE;
+    public static final Particle GUST_EMITTER_SMALL;
 
     static {
         MinecraftVersion version = Slimefun.getMinecraftVersion();
@@ -64,6 +68,12 @@ public class VersionedParticle {
         ENCHANT = version.isAtLeast(MinecraftVersion.MINECRAFT_1_20_5)
             ? Particle.ENCHANT
             : getKey("ENCHANTMENT_TABLE");
+
+        // Added in 1.21
+        GUST = getKey("GUST");
+        SMALL_GUST = getKey("SMALL_GUST");
+        GUST_EMITTER_LARGE = getKey("GUST_EMITTER_LARGE");
+        GUST_EMITTER_SMALL = getKey("GUST_EMITTER_SMALL");
     }
 
     @Nullable

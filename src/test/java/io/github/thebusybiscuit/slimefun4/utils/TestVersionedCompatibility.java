@@ -8,6 +8,7 @@ import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEnchantme
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEntityType;
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionType;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
 
 class TestVersionedCompatibility {
 
@@ -40,5 +41,13 @@ class TestVersionedCompatibility {
         assertNotNull(VersionedPotionType.WEAVING);
         assertNotNull(VersionedPotionType.WIND_CHARGED);
         assertNotNull(VersionedPotionType.INFESTED);
+    }
+
+    @Test
+    void testNewParticles() {
+        assertNotNull(VersionedParticle.GUST);
+        assertNotNull(VersionedParticle.SMALL_GUST);
+        assertNotNull(VersionedParticle.GUST_EMITTER_LARGE);
+        assertNotNull(VersionedParticle.GUST_EMITTER_SMALL);
     }
 }
