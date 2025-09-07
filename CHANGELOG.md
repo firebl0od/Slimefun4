@@ -50,6 +50,7 @@
 * Ominous Bottle craftable in the Magic Workbench
 * Trial Key craftable in the Magic Workbench
 * Vault and Trial Spawner craftable in the Enhanced Crafting Table
+
 * Ore Crusher and Electric Ore Grinder can crush Tuff and its variants into Sand
 
 * Butcher Android collects Breeze Rods, Wind Charges and mushrooms from new mobs
