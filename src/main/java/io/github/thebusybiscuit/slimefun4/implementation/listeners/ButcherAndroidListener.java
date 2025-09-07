@@ -23,6 +23,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.implementation.items.androids.AndroidInstance;
 import io.github.thebusybiscuit.slimefun4.implementation.items.androids.ButcherAndroid;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEntityType;
 
 /**
  * This {@link Listener} handles the collection of drops from an {@link Entity} that was
@@ -91,6 +92,18 @@ public class ButcherAndroidListener implements Listener {
 
         if (entityType == EntityType.VINDICATOR) {
             drops.add(new ItemStack(Material.EMERALD, 1 + random.nextInt(2)));
+        }
+
+        if (entityType == VersionedEntityType.BOGGED) {
+            drops.add(new ItemStack(Material.BROWN_MUSHROOM, 1 + random.nextInt(2)));
+            drops.add(new ItemStack(Material.RED_MUSHROOM, 1 + random.nextInt(2)));
+        }
+
+        if (entityType == VersionedEntityType.BREEZE) {
+            drops.add(new ItemStack(Material.BREEZE_ROD));
+            if (random.nextInt(3) == 0) {
+                drops.add(new ItemStack(Material.WIND_CHARGE));
+            }
         }
     }
 }
