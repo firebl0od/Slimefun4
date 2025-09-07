@@ -307,7 +307,12 @@ public class SlimefunItemStack extends ItemStack {
 
     @Override
     public ItemStack clone() {
-        return new SlimefunItemStack(id, this);
+        // Use the parent implementation to create a plain ItemStack copy first.
+        // This avoids the ItemStack(ItemStack) constructor recursively calling
+        // clone() on SlimefunItemStack which previously resulted in a
+        // StackOverflowError during tests.
+        ItemStack copy = super.clone();
+        return new SlimefunItemStack(id, copy);
     }
 
     @Override
