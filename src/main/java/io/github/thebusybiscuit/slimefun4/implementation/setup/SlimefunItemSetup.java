@@ -2113,6 +2113,10 @@ public final class SlimefunItemSetup {
             null, new ItemStack(Material.COPPER_BLOCK), null})
         .register(plugin);
 
+        new VanillaItem(itemGroups.magicalResources, SlimefunItems.BREEZE_ROD, "BREEZE_ROD", RecipeType.MOB_DROP,
+        new ItemStack[] {null, null, null, null, new CustomItemStack(new ItemStack(Material.BREEZE_SPAWN_EGG), "&aBreeze"), null, null, null, null})
+        .register(plugin);
+
         new VanillaItem(itemGroups.armor, new ItemStack(Material.WOLF_ARMOR), "WOLF_ARMOR", RecipeType.ARMOR_FORGE,
         new ItemStack[] {new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE),
             null, new ItemStack(Material.ARMADILLO_SCUTE), null,
