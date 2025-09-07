@@ -28,6 +28,8 @@ public class VersionedParticle {
     public static final Particle TRIAL_SPAWNER_EJECTION_OMINOUS;
     public static final Particle TRIAL_SPAWNER_SMOKE;
     public static final Particle TRIAL_SPAWNER_SMOKE_OMINOUS;
+    public static final Particle TRIAL_OMEN;
+    public static final Particle OMINOUS_SPAWNING;
     public static final Particle GUST;
     public static final Particle SMALL_GUST;
     public static final Particle GUST_EMITTER_LARGE;
@@ -84,6 +86,8 @@ public class VersionedParticle {
         TRIAL_SPAWNER_EJECTION_OMINOUS = getKey("TRIAL_SPAWNER_EJECTION_OMINOUS");
         TRIAL_SPAWNER_SMOKE = getKey("TRIAL_SPAWNER_SMOKE");
         TRIAL_SPAWNER_SMOKE_OMINOUS = getKey("TRIAL_SPAWNER_SMOKE_OMINOUS");
+        TRIAL_OMEN = getKey("TRIAL_OMEN");
+        OMINOUS_SPAWNING = getKey("OMINOUS_SPAWNING");
         GUST = getKey("GUST");
         SMALL_GUST = getKey("SMALL_GUST");
         GUST_EMITTER_LARGE = getKey("GUST_EMITTER_LARGE");

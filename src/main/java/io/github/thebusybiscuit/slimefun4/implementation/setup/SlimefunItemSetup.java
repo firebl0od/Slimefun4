@@ -852,6 +852,12 @@ public final class SlimefunItemSetup {
         new SlimefunItemStack(SlimefunItems.MAGICAL_ZOMBIE_PILLS, 2))
         .register(plugin);
 
+        new SlimefunItem(itemGroups.usefulItems, SlimefunItems.WOLF_ARMOR, RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {new ItemStack(Material.ARMADILLO_SCUTE), null, new ItemStack(Material.ARMADILLO_SCUTE),
+            new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE),
+            new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE)})
+        .register(plugin);
+
         new SmeltersPickaxe(itemGroups.tools, SlimefunItems.SMELTERS_PICKAXE, RecipeType.ENHANCED_CRAFTING_TABLE,
         new ItemStack[] {SlimefunItems.LAVA_CRYSTAL, SlimefunItems.LAVA_CRYSTAL, SlimefunItems.LAVA_CRYSTAL, null, SlimefunItems.FERROSILICON, null, null, SlimefunItems.FERROSILICON, null})
         .register(plugin);
