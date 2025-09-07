@@ -56,7 +56,7 @@
 
 
 #### Changes
-* Restrict Minecraft 1.21 support to patches up to 1.21.7
+* Restrict Minecraft 1.21 support to patches up to 1.21.8
 
 ## Release Candidate 37 (25 Feb 2024)
 
