@@ -49,6 +49,8 @@
 * Ominous Bottle craftable in the Magic Workbench
 * Trial Key craftable in the Magic Workbench
 * Vault and Trial Spawner craftable in the Enhanced Crafting Table
+* Heavy Core craftable in the Enhanced Crafting Table
+* Mace craftable in the Enhanced Crafting Table from a Breeze Rod and Heavy Core
 * Ore Crusher and Electric Ore Grinder can crush Tuff and its variants into Sand
 
 * Butcher Android collects Breeze Rods, Wind Charges and mushrooms from new mobs
@@ -57,7 +59,7 @@
 
 
 #### Changes
-* Restrict Minecraft 1.21 support to patches up to 1.21.7
+* Restrict Minecraft 1.21 support to patches up to 1.21.8
 
 ## Release Candidate 37 (25 Feb 2024)
 

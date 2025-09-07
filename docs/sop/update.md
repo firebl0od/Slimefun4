@@ -15,7 +15,7 @@ The first step is just updating Spigot in the pom.xml. This should only be done 
 * There's a new major version (well, MC major - 1.20 -> 1.21 is a major)
 * There was a change within MC or Bukkit/Spigot that broke the API
 
-To update the Spigot version, you will need to go to the `pom.xml` and find the `spigot.version` property, this will be within the `properties` property. Simply make this the MC version (e.g. `1.21` or in the case of minor `1.21.7`).
+To update the Spigot version, you will need to go to the `pom.xml` and find the `spigot.version` property, this will be within the `properties` property. Simply make this the MC version (e.g. `1.21` or in the case of minor `1.21.8`).
 
 Once updated, **make sure to run a build** to check for compilation failures with `mvn clean package -DskipTests=true`. We will go over the tests next.
 
