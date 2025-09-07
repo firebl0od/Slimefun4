@@ -13,6 +13,9 @@ public class VersionedEntityType {
     public static final EntityType MOOSHROOM;
     public static final EntityType SNOW_GOLEM;
     public static final EntityType FIREWORK;
+    public static final EntityType ARMADILLO;
+    public static final EntityType BOGGED;
+    public static final EntityType BREEZE;
 
     static {
         // MUSHROOM_COW is renamed to MOOSHROOM in 1.20.5
@@ -22,6 +25,11 @@ public class VersionedEntityType {
         SNOW_GOLEM = getKey("snow_golem");
 
         FIREWORK = getKey("firework_rocket");
+
+        // Added in 1.21
+        ARMADILLO = getKey("armadillo");
+        BOGGED = getKey("bogged");
+        BREEZE = getKey("breeze");
     }
 
     @Nullable
