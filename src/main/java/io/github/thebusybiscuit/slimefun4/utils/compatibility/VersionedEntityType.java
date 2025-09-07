@@ -18,6 +18,7 @@ public class VersionedEntityType {
     public static final EntityType BREEZE;
     public static final EntityType CREAKING;
     public static final EntityType WIND_CHARGE;
+
     static {
         // MUSHROOM_COW is renamed to MOOSHROOM in 1.20.5
         MOOSHROOM = getKey("mooshroom");
@@ -31,6 +32,7 @@ public class VersionedEntityType {
         ARMADILLO = getKey("armadillo");
         BOGGED = getKey("bogged");
         BREEZE = getKey("breeze");
+
         // Added in 1.21.2
         CREAKING = getKey("creaking");
         WIND_CHARGE = getKey("wind_charge");

@@ -21,6 +21,13 @@ public class VersionedParticle {
     public static final Particle WITCH;
     public static final Particle FIREWORK;
     public static final Particle ENCHANT;
+    public static final Particle BREEZE_WIND;
+    public static final Particle TRIAL_SPAWNER_DETECTION;
+    public static final Particle TRIAL_SPAWNER_DETECTION_OMINOUS;
+    public static final Particle TRIAL_SPAWNER_EJECTION;
+    public static final Particle TRIAL_SPAWNER_EJECTION_OMINOUS;
+    public static final Particle TRIAL_SPAWNER_SMOKE;
+    public static final Particle TRIAL_SPAWNER_SMOKE_OMINOUS;
     public static final Particle GUST;
     public static final Particle SMALL_GUST;
     public static final Particle GUST_EMITTER_LARGE;
@@ -70,6 +77,13 @@ public class VersionedParticle {
             : getKey("ENCHANTMENT_TABLE");
 
         // Added in 1.21
+        BREEZE_WIND = getKey("BREEZE_WIND");
+        TRIAL_SPAWNER_DETECTION = getKey("TRIAL_SPAWNER_DETECTION");
+        TRIAL_SPAWNER_DETECTION_OMINOUS = getKey("TRIAL_SPAWNER_DETECTION_OMINOUS");
+        TRIAL_SPAWNER_EJECTION = getKey("TRIAL_SPAWNER_EJECTION");
+        TRIAL_SPAWNER_EJECTION_OMINOUS = getKey("TRIAL_SPAWNER_EJECTION_OMINOUS");
+        TRIAL_SPAWNER_SMOKE = getKey("TRIAL_SPAWNER_SMOKE");
+        TRIAL_SPAWNER_SMOKE_OMINOUS = getKey("TRIAL_SPAWNER_SMOKE_OMINOUS");
         GUST = getKey("GUST");
         SMALL_GUST = getKey("SMALL_GUST");
         GUST_EMITTER_LARGE = getKey("GUST_EMITTER_LARGE");

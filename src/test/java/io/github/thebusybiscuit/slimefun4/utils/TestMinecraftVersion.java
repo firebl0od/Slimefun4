@@ -36,6 +36,7 @@ class TestMinecraftVersion {
         Assertions.assertFalse(MinecraftVersion.MINECRAFT_1_16.isMinecraftVersion(17, 1));
         Assertions.assertFalse(MinecraftVersion.MINECRAFT_1_20_5.isMinecraftVersion(20, 4));
         Assertions.assertFalse(MinecraftVersion.MINECRAFT_1_21.isMinecraftVersion(21, 8));
+
     }
 
     @Test

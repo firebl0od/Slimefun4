@@ -8,6 +8,7 @@ import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEnchantme
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEntityType;
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionType;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedItemFlag;
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
 
 class TestVersionedCompatibility {
@@ -17,6 +18,7 @@ class TestVersionedCompatibility {
         assertNotNull(VersionedEntityType.ARMADILLO);
         assertNotNull(VersionedEntityType.BOGGED);
         assertNotNull(VersionedEntityType.BREEZE);
+        assertNotNull(VersionedEntityType.WIND_CHARGE);
         assertNotNull(VersionedEntityType.CREAKING);
     }
 
@@ -44,7 +46,19 @@ class TestVersionedCompatibility {
     }
 
     @Test
+    void testNewItemFlag() {
+        assertNotNull(VersionedItemFlag.HIDE_TOOLTIP);
+    }
+
+    @Test
     void testNewParticles() {
+        assertNotNull(VersionedParticle.BREEZE_WIND);
+        assertNotNull(VersionedParticle.TRIAL_SPAWNER_DETECTION);
+        assertNotNull(VersionedParticle.TRIAL_SPAWNER_DETECTION_OMINOUS);
+        assertNotNull(VersionedParticle.TRIAL_SPAWNER_EJECTION);
+        assertNotNull(VersionedParticle.TRIAL_SPAWNER_EJECTION_OMINOUS);
+        assertNotNull(VersionedParticle.TRIAL_SPAWNER_SMOKE);
+        assertNotNull(VersionedParticle.TRIAL_SPAWNER_SMOKE_OMINOUS);
         assertNotNull(VersionedParticle.GUST);
         assertNotNull(VersionedParticle.SMALL_GUST);
         assertNotNull(VersionedParticle.GUST_EMITTER_LARGE);
