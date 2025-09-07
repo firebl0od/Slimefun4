@@ -20,6 +20,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.NotHopperable;
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionType;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedMaterial;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
@@ -52,9 +53,8 @@ public class AutoBrewer extends AContainer implements NotHopperable {
         potionRecipes.put(Material.COBWEB, VersionedPotionType.WEAVING);
         potionRecipes.put(Material.STONE, VersionedPotionType.INFESTED);
 
-        Material breezeRod = Material.matchMaterial("BREEZE_ROD");
-        if (breezeRod != null) {
-            potionRecipes.put(breezeRod, VersionedPotionType.WIND_CHARGED);
+        if (VersionedMaterial.BREEZE_ROD != null) {
+            potionRecipes.put(VersionedMaterial.BREEZE_ROD, VersionedPotionType.WIND_CHARGED);
         }
 
         fermentations.put(VersionedPotionType.SWIFTNESS, PotionType.SLOWNESS);
