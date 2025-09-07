@@ -126,6 +126,14 @@ class TestSlimefunTags {
         Assertions.assertThrows(IllegalArgumentException.class, () -> SlimefunTag.getTag(null));
     }
 
+    @Test
+    @DisplayName("Crafter should be cargo-compatible")
+    void testCrafterIsCargoStorage() throws TagMisconfigurationException {
+        SlimefunTag.reloadAll();
+
+        Assertions.assertTrue(SlimefunTag.CARGO_SUPPORTED_STORAGE_BLOCKS.isTagged(Material.CRAFTER));
+    }
+
     private void assertNotCyclic(@Nonnull SlimefunTag tag) {
         Set<SlimefunTag> visiting = new HashSet<>();
         Set<SlimefunTag> visited = new HashSet<>();
