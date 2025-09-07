@@ -16,6 +16,7 @@ class TestVersionedCompatibility {
         assertNotNull(VersionedEntityType.ARMADILLO);
         assertNotNull(VersionedEntityType.BOGGED);
         assertNotNull(VersionedEntityType.BREEZE);
+        assertNotNull(VersionedEntityType.CREAKING);
     }
 
     @Test
