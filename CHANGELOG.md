@@ -46,6 +46,7 @@
 * Auto crafters now require the new Crafter block in their recipes
 * Add recipes for new 1.21 blocks and armor
 * Wolf Armor craftable in the Armor Forge from Armadillo Scutes
+* Butcher Android collects Breeze Rods, Wind Charges and mushrooms from new mobs
 
 #### Changes
 * Restrict Minecraft 1.21 support to patches up to 1.21.7
