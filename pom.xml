@@ -539,4 +539,18 @@
             </exclusions>
         </dependency>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>skip-mockbukkit</id>
+            <activation>
+                <property>
+                    <name>skipMockBukkit</name>
+                </property>
+            </activation>
+            <properties>
+                <maven.test.skip>true</maven.test.skip>
+            </properties>
+        </profile>
+    </profiles>
 </project>
