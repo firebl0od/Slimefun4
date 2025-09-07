@@ -13,7 +13,7 @@ But it also comes with a lot of addons! Check out our [addons](https://github.co
 
 ### Support for Minecraft 1.21
 Slimefun now targets Spigot **1.21.x**. The plugin recognises new entities like Armadillos, Bogged, Breezes and Creakings and handles fresh potion effects and enchantments such as Oozing, Weaving, Wind Charged, Density, Breach and Wind Burst.
-These additions integrate seamlessly with existing mechanics, allowing you to craft recipes and machines that interact with the latest vanilla content.
+These additions integrate seamlessly with existing mechanics, allowing you to craft recipes and machines that interact with the latest vanilla content. You can craft the Crafter, Copper Bulb, Ominous Bottle, Trial Key, Vault and Trial Spawner, grind Tuff variants into sand and harvest new mob drops with Slimefun automation.
 
 ### Quick navigation
 * **[:floppy_disk: Download Slimefun4](#floppy_disk-download-slimefun-4)**
