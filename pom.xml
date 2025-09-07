@@ -32,6 +32,9 @@
         <spigot.version>1.21.7</spigot.version>
         <spigot.javadocs>https://hub.spigotmc.org/javadocs/spigot/</spigot.javadocs>
 
+        <!-- Testing framework -->
+        <junit.version>5.11.4</junit.version>
+
         <!-- Default settings for sonarcloud.io -->
         <sonar.projectKey>Slimefun_Slimefun4</sonar.projectKey>
         <sonar.organization>slimefun</sonar.organization>
@@ -371,6 +374,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
