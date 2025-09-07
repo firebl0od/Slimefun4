@@ -218,6 +218,7 @@ import io.github.thebusybiscuit.slimefun4.utils.ColoredMaterial;
 import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedMaterial;
 
 /**
  * This class holds the recipes of all items.
@@ -2090,18 +2091,18 @@ public final class SlimefunItemSetup {
         .register(plugin);
 
         if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_21)) {
-            Material crafter = Material.matchMaterial("CRAFTER");
-            Material copperBulb = Material.matchMaterial("COPPER_BULB");
-            Material breezeSpawnEgg = Material.matchMaterial("BREEZE_SPAWN_EGG");
-            Material breezeRod = Material.matchMaterial("BREEZE_ROD");
-            Material ominousBottle = Material.matchMaterial("OMINOUS_BOTTLE");
-            Material trialKey = Material.matchMaterial("TRIAL_KEY");
-            Material vault = Material.matchMaterial("VAULT");
-            Material trialSpawner = Material.matchMaterial("TRIAL_SPAWNER");
-            Material heavyCore = Material.matchMaterial("HEAVY_CORE");
-            Material mace = Material.matchMaterial("MACE");
-            Material wolfArmor = Material.matchMaterial("WOLF_ARMOR");
-            Material armadilloScute = Material.matchMaterial("ARMADILLO_SCUTE");
+            Material crafter = VersionedMaterial.CRAFTER;
+            Material copperBulb = VersionedMaterial.COPPER_BULB;
+            Material breezeSpawnEgg = VersionedMaterial.BREEZE_SPAWN_EGG;
+            Material breezeRod = VersionedMaterial.BREEZE_ROD;
+            Material ominousBottle = VersionedMaterial.OMINOUS_BOTTLE;
+            Material trialKey = VersionedMaterial.TRIAL_KEY;
+            Material vault = VersionedMaterial.VAULT;
+            Material trialSpawner = VersionedMaterial.TRIAL_SPAWNER;
+            Material heavyCore = VersionedMaterial.HEAVY_CORE;
+            Material mace = VersionedMaterial.MACE;
+            Material wolfArmor = VersionedMaterial.WOLF_ARMOR;
+            Material armadilloScute = VersionedMaterial.ARMADILLO_SCUTE;
 
             new VanillaItem(itemGroups.basicMachines, new ItemStack(crafter), "CRAFTER", RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[] {new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.REDSTONE),
@@ -2765,27 +2766,26 @@ public final class SlimefunItemSetup {
                 new SlimefunItemStack(SlimefunItems.RAINBOW_LEATHER, 4))
                 .register(plugin);
 
-        Material crafterMaterial = Material.matchMaterial("CRAFTER");
-        if (crafterMaterial != null) {
+        if (VersionedMaterial.CRAFTER != null) {
             new UnplaceableBlock(itemGroups.cargo, SlimefunItems.CRAFTING_MOTOR, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[] {new ItemStack(crafterMaterial), SlimefunItems.BLISTERING_INGOT_3, new ItemStack(crafterMaterial), SlimefunItems.REDSTONE_ALLOY, SlimefunItems.CARGO_MOTOR, SlimefunItems.REDSTONE_ALLOY, new ItemStack(crafterMaterial), SlimefunItems.BLISTERING_INGOT_3, new ItemStack(crafterMaterial)},
+                new ItemStack[] {new ItemStack(VersionedMaterial.CRAFTER), SlimefunItems.BLISTERING_INGOT_3, new ItemStack(VersionedMaterial.CRAFTER), SlimefunItems.REDSTONE_ALLOY, SlimefunItems.CARGO_MOTOR, SlimefunItems.REDSTONE_ALLOY, new ItemStack(VersionedMaterial.CRAFTER), SlimefunItems.BLISTERING_INGOT_3, new ItemStack(VersionedMaterial.CRAFTER)},
                 new SlimefunItemStack(SlimefunItems.CRAFTING_MOTOR, 2))
                 .register(plugin);
 
             new VanillaAutoCrafter(itemGroups.cargo, SlimefunItems.VANILLA_AUTO_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[] {null, SlimefunItems.CARGO_MOTOR, null, new ItemStack(crafterMaterial), SlimefunItems.CRAFTING_MOTOR, new ItemStack(crafterMaterial), null, SlimefunItems.ELECTRIC_MOTOR, null})
+                new ItemStack[] {null, SlimefunItems.CARGO_MOTOR, null, new ItemStack(VersionedMaterial.CRAFTER), SlimefunItems.CRAFTING_MOTOR, new ItemStack(VersionedMaterial.CRAFTER), null, SlimefunItems.ELECTRIC_MOTOR, null})
                 .setCapacity(256)
                 .setEnergyConsumption(16)
                 .register(plugin);
 
             new EnhancedAutoCrafter(itemGroups.cargo, SlimefunItems.ENHANCED_AUTO_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[] {null, SlimefunItems.CRAFTING_MOTOR, null, new ItemStack(crafterMaterial), new ItemStack(Material.DISPENSER), new ItemStack(crafterMaterial), null, SlimefunItems.CARGO_MOTOR, null})
+                new ItemStack[] {null, SlimefunItems.CRAFTING_MOTOR, null, new ItemStack(VersionedMaterial.CRAFTER), new ItemStack(Material.DISPENSER), new ItemStack(VersionedMaterial.CRAFTER), null, SlimefunItems.CARGO_MOTOR, null})
                 .setCapacity(256)
                 .setEnergyConsumption(16)
                 .register(plugin);
 
             new ArmorAutoCrafter(itemGroups.cargo, SlimefunItems.ARMOR_AUTO_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[] {null, SlimefunItems.CRAFTING_MOTOR, null, new ItemStack(Material.DISPENSER), new ItemStack(Material.ANVIL), new ItemStack(Material.DISPENSER), new ItemStack(crafterMaterial), SlimefunItems.ELECTRIC_MOTOR, new ItemStack(crafterMaterial)})
+                new ItemStack[] {null, SlimefunItems.CRAFTING_MOTOR, null, new ItemStack(Material.DISPENSER), new ItemStack(Material.ANVIL), new ItemStack(Material.DISPENSER), new ItemStack(VersionedMaterial.CRAFTER), SlimefunItems.ELECTRIC_MOTOR, new ItemStack(VersionedMaterial.CRAFTER)})
                 .setCapacity(256)
                 .setEnergyConsumption(32)
                 .register(plugin);

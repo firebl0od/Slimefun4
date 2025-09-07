@@ -34,6 +34,7 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEntityType;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedMaterial;
 
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
@@ -85,9 +86,8 @@ public class ProduceCollector extends AContainer implements RecipeDisplayItem {
 
         // Armadillo Scutes from Armadillos
         if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_21)) {
-            Material scute = Material.matchMaterial("ARMADILLO_SCUTE");
-            if (scute != null) {
-                addProduce(new AnimalProduce(new ItemStack(Material.BRUSH), new ItemStack(scute), n -> {
+            if (VersionedMaterial.ARMADILLO_SCUTE != null) {
+                addProduce(new AnimalProduce(new ItemStack(Material.BRUSH), new ItemStack(VersionedMaterial.ARMADILLO_SCUTE), n -> {
                     if (n.getType() == VersionedEntityType.ARMADILLO && n instanceof Ageable ageable) {
                         return ageable.isAdult();
                     } else {
@@ -143,10 +143,9 @@ public class ProduceCollector extends AContainer implements RecipeDisplayItem {
         displayRecipes.add(new ItemStack(Material.MUSHROOM_STEW));
 
         if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_21)) {
-            Material scute = Material.matchMaterial("ARMADILLO_SCUTE");
-            if (scute != null) {
+            if (VersionedMaterial.ARMADILLO_SCUTE != null) {
                 displayRecipes.add(new CustomItemStack(Material.BRUSH, null, "&fRequires &bArmadillo &fnearby"));
-                displayRecipes.add(new ItemStack(scute));
+                displayRecipes.add(new ItemStack(VersionedMaterial.ARMADILLO_SCUTE));
             }
         }
 

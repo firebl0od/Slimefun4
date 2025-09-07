@@ -23,6 +23,7 @@ import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
 import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEnchantment;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedMaterial;
 import io.github.thebusybiscuit.slimefun4.utils.itemstack.ColoredFireworkStar;
 
 /**
@@ -65,21 +66,32 @@ public final class SlimefunItems {
     public static final SlimefunItemStack MAGICAL_ZOMBIE_PILLS = new SlimefunItemStack("MAGICAL_ZOMBIE_PILLS", Material.NETHER_WART, "&6Magical Zombie Pills", "", "&eRight Click &7a Zombified Villager", "&eor &7a Zombified Piglin to", "&7instantly cure it from its curse");
     public static final SlimefunItemStack WOLF_ARMOR = new SlimefunItemStack(
         "WOLF_ARMOR",
-        Material.matchMaterial("WOLF_ARMOR") == null ? Material.LEATHER_CHESTPLATE : Material.matchMaterial("WOLF_ARMOR"),
+        VersionedMaterial.WOLF_ARMOR == null ? Material.LEATHER_CHESTPLATE : VersionedMaterial.WOLF_ARMOR,
         "&6Wolf Armor");
     public static final SlimefunItemStack BREEZE_ROD = new SlimefunItemStack(
         "BREEZE_ROD",
-        Material.matchMaterial("BREEZE_ROD") == null ? Material.BLAZE_ROD : Material.matchMaterial("BREEZE_ROD"),
+        VersionedMaterial.BREEZE_ROD == null ? Material.BLAZE_ROD : VersionedMaterial.BREEZE_ROD,
         "&bBreeze Rod");
+    public static final SlimefunItemStack WIND_CHARGE = new SlimefunItemStack(
+        "WIND_CHARGE",
+        VersionedMaterial.WIND_CHARGE == null ? Material.SNOWBALL : VersionedMaterial.WIND_CHARGE,
+        "&bWind Charge");
+    public static final SlimefunItemStack ARMADILLO_SCUTE = new SlimefunItemStack(
+        "ARMADILLO_SCUTE",
+        VersionedMaterial.ARMADILLO_SCUTE == null ? Material.TURTLE_SCUTE : VersionedMaterial.ARMADILLO_SCUTE,
+        "&6Armadillo Scute");
+    public static final SlimefunItemStack CREAKING_HEART = new SlimefunItemStack(
+        "CREAKING_HEART",
+        VersionedMaterial.CREAKING_HEART == null ? Material.ROTTEN_FLESH : VersionedMaterial.CREAKING_HEART,
+        "&cCreaking Heart");
     public static final SlimefunItemStack HEAVY_CORE = new SlimefunItemStack(
         "HEAVY_CORE",
-        Material.matchMaterial("HEAVY_CORE") == null ? Material.IRON_BLOCK : Material.matchMaterial("HEAVY_CORE"),
+        VersionedMaterial.HEAVY_CORE == null ? Material.IRON_BLOCK : VersionedMaterial.HEAVY_CORE,
         "&6Heavy Core");
     public static final SlimefunItemStack MACE = new SlimefunItemStack(
         "MACE",
-        Material.matchMaterial("MACE") == null ? Material.DIAMOND_SWORD : Material.matchMaterial("MACE"),
+        VersionedMaterial.MACE == null ? Material.DIAMOND_SWORD : VersionedMaterial.MACE,
         "&6Mace");
-
     public static final SlimefunItemStack WIND_CHARGE = new SlimefunItemStack(
         "WIND_CHARGE",
         Material.matchMaterial("WIND_CHARGE") == null ? Material.FIRE_CHARGE : Material.matchMaterial("WIND_CHARGE"),
@@ -92,7 +104,6 @@ public final class SlimefunItems {
         "CREAKING_HEART",
         Material.matchMaterial("CREAKING_HEART") == null ? Material.GHAST_TEAR : Material.matchMaterial("CREAKING_HEART"),
         "&cCreaking Heart");
-
     public static final SlimefunItemStack FLASK_OF_KNOWLEDGE = new SlimefunItemStack("FLASK_OF_KNOWLEDGE", Material.GLASS_BOTTLE, "&cFlask of Knowledge", "", "&fAllows you to store some of", "&fyour Experience in a Bottle", "&7Cost: &a1 Level");
     public static final SlimefunItemStack FILLED_FLASK_OF_KNOWLEDGE = new SlimefunItemStack("FILLED_FLASK_OF_KNOWLEDGE", Material.EXPERIENCE_BOTTLE, "&aFlask of Knowledge");
 

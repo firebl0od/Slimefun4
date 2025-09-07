@@ -24,6 +24,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.androids.AndroidI
 import io.github.thebusybiscuit.slimefun4.implementation.items.androids.ButcherAndroid;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEntityType;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedMaterial;
 
 /**
  * This {@link Listener} handles the collection of drops from an {@link Entity} that was
@@ -99,25 +100,21 @@ public class ButcherAndroidListener implements Listener {
             drops.add(new ItemStack(Material.RED_MUSHROOM, 1 + random.nextInt(2)));
         }
 
-        Material scute = Material.matchMaterial("ARMADILLO_SCUTE");
-        if (entityType == VersionedEntityType.ARMADILLO && scute != null) {
-            drops.add(new ItemStack(scute, 1 + random.nextInt(2)));
+        if (entityType == VersionedEntityType.ARMADILLO && VersionedMaterial.ARMADILLO_SCUTE != null) {
+            drops.add(new ItemStack(VersionedMaterial.ARMADILLO_SCUTE, 1 + random.nextInt(2)));
         }
 
-        Material breezeRod = Material.matchMaterial("BREEZE_ROD");
-        Material windCharge = Material.matchMaterial("WIND_CHARGE");
         if (entityType == VersionedEntityType.BREEZE) {
-            if (breezeRod != null) {
-                drops.add(new ItemStack(breezeRod));
+            if (VersionedMaterial.BREEZE_ROD != null) {
+                drops.add(new ItemStack(VersionedMaterial.BREEZE_ROD));
             }
-            if (windCharge != null && random.nextInt(3) == 0) {
-                drops.add(new ItemStack(windCharge));
+            if (VersionedMaterial.WIND_CHARGE != null && random.nextInt(3) == 0) {
+                drops.add(new ItemStack(VersionedMaterial.WIND_CHARGE));
             }
         }
 
-        Material creakingHeart = Material.matchMaterial("CREAKING_HEART");
-        if (entityType == VersionedEntityType.CREAKING && creakingHeart != null) {
-            drops.add(new ItemStack(creakingHeart));
+        if (entityType == VersionedEntityType.CREAKING && VersionedMaterial.CREAKING_HEART != null) {
+            drops.add(new ItemStack(VersionedMaterial.CREAKING_HEART));
         }
     }
 }

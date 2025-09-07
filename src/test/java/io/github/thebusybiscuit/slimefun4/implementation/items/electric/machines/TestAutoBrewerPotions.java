@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines.AutoBrewer;
 import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionType;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedMaterial;
 
 class TestAutoBrewerPotions {
 
@@ -30,11 +31,10 @@ class TestAutoBrewerPotions {
         assertEquals(VersionedPotionType.WEAVING, recipes.get(Material.COBWEB));
         assertEquals(VersionedPotionType.INFESTED, recipes.get(Material.STONE));
 
-        Material breezeRod = Material.matchMaterial("BREEZE_ROD");
-        if (breezeRod != null) {
-            assertEquals(VersionedPotionType.WIND_CHARGED, recipes.get(breezeRod));
+        if (VersionedMaterial.BREEZE_ROD != null) {
+            assertEquals(VersionedPotionType.WIND_CHARGED, recipes.get(VersionedMaterial.BREEZE_ROD));
         } else {
-            assertNotNull(breezeRod, "BREEZE_ROD material should exist on 1.21");
+            assertNotNull(VersionedMaterial.BREEZE_ROD, "BREEZE_ROD material should exist on 1.21");
         }
     }
 }
