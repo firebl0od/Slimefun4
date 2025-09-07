@@ -99,8 +99,9 @@ public class VersionedParticle {
         try {
             Field field = Particle.class.getDeclaredField(key);
             return (Particle) field.get(null);
-        } catch(Exception e) {
-            return Particle.FLAME;
+        } catch (Exception e) {
+            // Return null so callers can decide how to handle missing particles
+            return null;
         }
     }
 }
