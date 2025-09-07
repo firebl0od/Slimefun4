@@ -46,6 +46,7 @@
 * Auto crafters now require the new Crafter block in their recipes
 * Add recipes for new 1.21 blocks and armor
 * Wolf Armor craftable in the Armor Forge from Armadillo Scutes
+* Ore Crusher and Electric Ore Grinder can crush Tuff and its variants into Sand
 
 * Butcher Android collects Breeze Rods, Wind Charges and mushrooms from new mobs
 * Butcher Android collects Creaking Hearts from Creakings
