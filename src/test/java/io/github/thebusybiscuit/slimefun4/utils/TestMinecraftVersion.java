@@ -35,7 +35,8 @@ class TestMinecraftVersion {
         Assertions.assertFalse(MinecraftVersion.MINECRAFT_1_20.isMinecraftVersion(20, 5));
         Assertions.assertFalse(MinecraftVersion.MINECRAFT_1_16.isMinecraftVersion(17, 1));
         Assertions.assertFalse(MinecraftVersion.MINECRAFT_1_20_5.isMinecraftVersion(20, 4));
-        Assertions.assertFalse(MinecraftVersion.MINECRAFT_1_21.isMinecraftVersion(21, -2));
+        Assertions.assertFalse(MinecraftVersion.MINECRAFT_1_21.isMinecraftVersion(21, 8));
+
     }
 
     @Test
@@ -91,6 +92,7 @@ class TestMinecraftVersion {
         Assertions.assertFalse(MinecraftVersion.MINECRAFT_1_20_5.isBefore(20, 5));
         Assertions.assertTrue(MinecraftVersion.MINECRAFT_1_20_5.isBefore(20, 6));
         Assertions.assertFalse(MinecraftVersion.MINECRAFT_1_21.isBefore(21, 7));
+        Assertions.assertTrue(MinecraftVersion.MINECRAFT_1_21.isBefore(21, 8));
         Assertions.assertTrue(MinecraftVersion.MINECRAFT_1_20_5.isBefore(21, 0));
     }
 

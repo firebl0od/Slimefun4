@@ -19,6 +19,7 @@ class TestVersionedCompatibility {
         assertNotNull(VersionedEntityType.BOGGED);
         assertNotNull(VersionedEntityType.BREEZE);
         assertNotNull(VersionedEntityType.WIND_CHARGE);
+        assertNotNull(VersionedEntityType.CREAKING);
     }
 
     @Test
@@ -58,5 +59,9 @@ class TestVersionedCompatibility {
         assertNotNull(VersionedParticle.TRIAL_SPAWNER_EJECTION_OMINOUS);
         assertNotNull(VersionedParticle.TRIAL_SPAWNER_SMOKE);
         assertNotNull(VersionedParticle.TRIAL_SPAWNER_SMOKE_OMINOUS);
+        assertNotNull(VersionedParticle.GUST);
+        assertNotNull(VersionedParticle.SMALL_GUST);
+        assertNotNull(VersionedParticle.GUST_EMITTER_LARGE);
+        assertNotNull(VersionedParticle.GUST_EMITTER_SMALL);
     }
 }
