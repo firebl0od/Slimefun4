@@ -60,20 +60,26 @@ public class UpdaterService {
             // This Server is using a modified build that is not a public release.
             branch = SlimefunBranch.UNOFFICIAL;
         } else if (version.startsWith("Dev - ")) {
-            // If we are using a development build, we want to switch to our custom
-            try {
-                autoUpdater = new BlobBuildUpdater(plugin, file, "Slimefun4", "Dev");
-            } catch (Exception x) {
-                plugin.getLogger().log(Level.SEVERE, "Failed to create AutoUpdater", x);
+            // If we are using a development build, only attempt to create an updater
+            // when the plugin's own version also follows the development pattern.
+            if (plugin.getDescription().getVersion().startsWith("Dev - ")) {
+                try {
+                    autoUpdater = new BlobBuildUpdater(plugin, file, "Slimefun4", "Dev");
+                } catch (Exception x) {
+                    plugin.getLogger().log(Level.SEVERE, "Failed to create AutoUpdater", x);
+                }
             }
 
             branch = SlimefunBranch.DEVELOPMENT;
         } else if (version.startsWith("RC - ")) {
-            // If we are using a "stable" build, we want to switch to our custom
-            try {
-                autoUpdater = new BlobBuildUpdater(plugin, file, "Slimefun4", "RC");
-            } catch (Exception x) {
-                plugin.getLogger().log(Level.SEVERE, "Failed to create AutoUpdater", x);
+            // If we are using a "stable" build, only attempt to create an updater
+            // when the plugin's version matches the stable pattern.
+            if (plugin.getDescription().getVersion().startsWith("RC - ")) {
+                try {
+                    autoUpdater = new BlobBuildUpdater(plugin, file, "Slimefun4", "RC");
+                } catch (Exception x) {
+                    plugin.getLogger().log(Level.SEVERE, "Failed to create AutoUpdater", x);
+                }
             }
 
             branch = SlimefunBranch.STABLE;
