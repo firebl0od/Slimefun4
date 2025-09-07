@@ -100,7 +100,7 @@ public class VersionedParticle {
             Field field = Particle.class.getDeclaredField(key);
             return (Particle) field.get(null);
         } catch(Exception e) {
-            return null;
+            return Particle.FLAME;
         }
     }
 }

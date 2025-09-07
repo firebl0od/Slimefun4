@@ -54,7 +54,7 @@ class BackpackCommand extends SubCommand {
 
                 OfflinePlayer backpackOwner = Bukkit.getOfflinePlayer(args[1]);
 
-                if (!backpackOwner.hasPlayedBefore()) {
+                if (!backpackOwner.hasPlayedBefore() && !backpackOwner.isOnline()) {
                     Slimefun.getLocalization().sendMessage(sender, "commands.backpack.player-never-joined");
                     return;
                 }

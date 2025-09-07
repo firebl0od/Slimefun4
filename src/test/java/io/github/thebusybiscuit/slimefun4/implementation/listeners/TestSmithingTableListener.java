@@ -71,6 +71,7 @@ class TestSmithingTableListener {
 
         SmithingInventory inv = Mockito.mock(SmithingInventory.class);
         // MinecraftVersion#isAtLeast always returns true during unit test, so we use the 1.20 layout here.
+        Mockito.when(inv.getType()).thenReturn(org.bukkit.event.inventory.InventoryType.SMITHING);
         Mockito.when(inv.getContents()).thenReturn(new ItemStack[] { new ItemStack(Material.NETHERITE_UPGRADE_SMITHING_TEMPLATE), tool, material, null });
 
         InventoryView view = player.openInventory(inv);
@@ -92,6 +93,7 @@ class TestSmithingTableListener {
             return null;
         }).when(inv).setResult(Mockito.any());
 
+        Mockito.when(inv.getType()).thenReturn(org.bukkit.event.inventory.InventoryType.SMITHING);
         Mockito.when(inv.getResult()).thenAnswer(invocation -> result.getValue());
         // MinecraftVersion#isAtLeast always returns true during unit test, so we use the 1.20 layout here.
         Mockito.when(inv.getContents()).thenReturn(new ItemStack[] { new ItemStack(Material.NETHERITE_UPGRADE_SMITHING_TEMPLATE), tool, material, null });
