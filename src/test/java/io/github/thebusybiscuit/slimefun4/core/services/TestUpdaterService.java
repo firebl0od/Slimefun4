@@ -89,4 +89,17 @@ class TestUpdaterService {
         Slimefun.getCfg().setValue("options.auto-update", true);
         Assertions.assertTrue(service.isEnabled());
     }
+
+    @Test
+    @DisplayName("Test getting the latest version")
+    void testGetLatestVersion() {
+        PluginUpdater<PrefixedVersion> updater = Mockito.mock(PluginUpdater.class);
+        PrefixedVersion version = Mockito.mock(PrefixedVersion.class);
+        Mockito.when(version.getVersionNumber()).thenReturn(42);
+        java.util.concurrent.CompletableFuture<PrefixedVersion> future = java.util.concurrent.CompletableFuture.completedFuture(version);
+        Mockito.when(updater.getLatestVersion()).thenReturn(future);
+
+        UpdaterService service = new UpdaterService(plugin, updater, SlimefunBranch.DEVELOPMENT);
+        Assertions.assertEquals(42, service.getLatestVersion());
+    }
 }
