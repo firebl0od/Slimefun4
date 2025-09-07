@@ -84,15 +84,18 @@ public class ProduceCollector extends AContainer implements RecipeDisplayItem {
         }));
 
         // Armadillo Scutes from Armadillos
-        addProduce(new AnimalProduce(new ItemStack(Material.BRUSH), new ItemStack(Material.ARMADILLO_SCUTE), n -> {
-            if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_21)
-                && n.getType() == VersionedEntityType.ARMADILLO
-                && n instanceof Ageable ageable) {
-                return ageable.isAdult();
-            } else {
-                return false;
+        if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_21)) {
+            Material scute = Material.matchMaterial("ARMADILLO_SCUTE");
+            if (scute != null) {
+                addProduce(new AnimalProduce(new ItemStack(Material.BRUSH), new ItemStack(scute), n -> {
+                    if (n.getType() == VersionedEntityType.ARMADILLO && n instanceof Ageable ageable) {
+                        return ageable.isAdult();
+                    } else {
+                        return false;
+                    }
+                }));
             }
-        }));
+        }
     }
 
     /**
@@ -140,8 +143,11 @@ public class ProduceCollector extends AContainer implements RecipeDisplayItem {
         displayRecipes.add(new ItemStack(Material.MUSHROOM_STEW));
 
         if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_21)) {
-            displayRecipes.add(new CustomItemStack(Material.BRUSH, null, "&fRequires &bArmadillo &fnearby"));
-            displayRecipes.add(new ItemStack(Material.ARMADILLO_SCUTE));
+            Material scute = Material.matchMaterial("ARMADILLO_SCUTE");
+            if (scute != null) {
+                displayRecipes.add(new CustomItemStack(Material.BRUSH, null, "&fRequires &bArmadillo &fnearby"));
+                displayRecipes.add(new ItemStack(scute));
+            }
         }
 
         return displayRecipes;
