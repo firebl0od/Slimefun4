@@ -1037,12 +1037,6 @@ public final class SlimefunItemSetup {
             SlimefunItems.GOLDEN_HELMET_12K, SlimefunItems.GOLDEN_CHESTPLATE_12K, SlimefunItems.GOLDEN_LEGGINGS_12K, SlimefunItems.GOLDEN_BOOTS_12K
         }, "GOLD_12K", false, new PotionEffect[0][0], plugin);
 
-        new VanillaItem(itemGroups.armor, new ItemStack(Material.WOLF_ARMOR), "WOLF_ARMOR", RecipeType.ARMOR_FORGE,
-        new ItemStack[] {new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE),
-            new ItemStack(Material.ARMADILLO_SCUTE), null, new ItemStack(Material.ARMADILLO_SCUTE),
-            new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE)})
-        .register(plugin);
-
         new SlimefunItem(itemGroups.misc, SlimefunItems.CLOTH, RecipeType.ENHANCED_CRAFTING_TABLE,
         new ItemStack[] {new ItemStack(Material.WHITE_WOOL), null, null, null, null, null, null, null, null},
         new SlimefunItemStack(SlimefunItems.CLOTH, 8))
@@ -2115,6 +2109,30 @@ public final class SlimefunItemSetup {
 
         new VanillaItem(itemGroups.magicalResources, SlimefunItems.BREEZE_ROD, "BREEZE_ROD", RecipeType.MOB_DROP,
         new ItemStack[] {null, null, null, null, new CustomItemStack(new ItemStack(Material.BREEZE_SPAWN_EGG), "&aBreeze"), null, null, null, null})
+        .register(plugin);
+
+        new VanillaItem(itemGroups.magicalResources, new ItemStack(Material.OMINOUS_BOTTLE), "OMINOUS_BOTTLE", RecipeType.MAGIC_WORKBENCH,
+        new ItemStack[] {new ItemStack(Material.COBWEB), new ItemStack(Material.BREEZE_ROD), new ItemStack(Material.COBWEB),
+            new ItemStack(Material.SLIME_BALL), new ItemStack(Material.GLASS_BOTTLE), new ItemStack(Material.SLIME_BALL),
+            null, new ItemStack(Material.FERMENTED_SPIDER_EYE), null})
+        .register(plugin);
+
+        new VanillaItem(itemGroups.magicalResources, new ItemStack(Material.TRIAL_KEY), "TRIAL_KEY", RecipeType.MAGIC_WORKBENCH,
+        new ItemStack[] {new ItemStack(Material.GOLD_INGOT), SlimefunItems.BREEZE_ROD, new ItemStack(Material.GOLD_INGOT),
+            null, new ItemStack(Material.TRIPWIRE_HOOK), null,
+            null, new ItemStack(Material.IRON_INGOT), null})
+        .register(plugin);
+
+        new VanillaItem(itemGroups.basicMachines, new ItemStack(Material.VAULT), "VAULT", RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {new ItemStack(Material.COPPER_BLOCK), new ItemStack(Material.IRON_BARS), new ItemStack(Material.COPPER_BLOCK),
+            new ItemStack(Material.IRON_BARS), new ItemStack(Material.CHEST), new ItemStack(Material.IRON_BARS),
+            new ItemStack(Material.COPPER_BLOCK), new ItemStack(Material.IRON_BARS), new ItemStack(Material.COPPER_BLOCK)})
+        .register(plugin);
+
+        new VanillaItem(itemGroups.basicMachines, new ItemStack(Material.TRIAL_SPAWNER), "TRIAL_SPAWNER", RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {new ItemStack(Material.DEEPSLATE_BRICKS), SlimefunItems.BREEZE_ROD, new ItemStack(Material.DEEPSLATE_BRICKS),
+            new ItemStack(Material.IRON_BARS), new ItemStack(Material.SPAWNER), new ItemStack(Material.IRON_BARS),
+            new ItemStack(Material.DEEPSLATE_BRICKS), new ItemStack(Material.TRIAL_KEY), new ItemStack(Material.DEEPSLATE_BRICKS)})
         .register(plugin);
 
         new VanillaItem(itemGroups.armor, new ItemStack(Material.WOLF_ARMOR), "WOLF_ARMOR", RecipeType.ARMOR_FORGE,
