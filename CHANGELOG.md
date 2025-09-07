@@ -43,6 +43,8 @@
 #### Additions
 * Produce Collector can brush Armadillos for Armadillo Scutes on 1.21+
 * Auto-Brewer can brew Oozing, Weaving, Wind Charging and Infestation potions
+* Auto crafters now require the new Crafter block in their recipes
+* Wolf Armor craftable in the Armor Forge from Armadillo Scutes
 
 #### Changes
 * Restrict Minecraft 1.21 support to patches up to 1.21.7
