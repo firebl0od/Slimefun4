@@ -852,6 +852,12 @@ public final class SlimefunItemSetup {
         new SlimefunItemStack(SlimefunItems.MAGICAL_ZOMBIE_PILLS, 2))
         .register(plugin);
 
+        new SlimefunItem(itemGroups.usefulItems, SlimefunItems.WOLF_ARMOR, RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {new ItemStack(Material.ARMADILLO_SCUTE), null, new ItemStack(Material.ARMADILLO_SCUTE),
+            new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE),
+            new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE)})
+        .register(plugin);
+
         new SmeltersPickaxe(itemGroups.tools, SlimefunItems.SMELTERS_PICKAXE, RecipeType.ENHANCED_CRAFTING_TABLE,
         new ItemStack[] {SlimefunItems.LAVA_CRYSTAL, SlimefunItems.LAVA_CRYSTAL, SlimefunItems.LAVA_CRYSTAL, null, SlimefunItems.FERROSILICON, null, null, SlimefunItems.FERROSILICON, null})
         .register(plugin);
@@ -2093,6 +2099,24 @@ public final class SlimefunItemSetup {
 
         new VanillaItem(itemGroups.magicalGadgets, new ItemStack(Material.TOTEM_OF_UNDYING), "TOTEM_OF_UNDYING", RecipeType.ANCIENT_ALTAR,
         new ItemStack[] {SlimefunItems.ESSENCE_OF_AFTERLIFE, new ItemStack(Material.EMERALD_BLOCK), SlimefunItems.ESSENCE_OF_AFTERLIFE, SlimefunItems.MAGIC_LUMP_3, SlimefunItems.COMMON_TALISMAN, SlimefunItems.MAGIC_LUMP_3, SlimefunItems.ESSENCE_OF_AFTERLIFE, new ItemStack(Material.EMERALD_BLOCK), SlimefunItems.ESSENCE_OF_AFTERLIFE})
+        .register(plugin);
+
+        new VanillaItem(itemGroups.basicMachines, new ItemStack(Material.CRAFTER), "CRAFTER", RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.REDSTONE),
+            new ItemStack(Material.IRON_INGOT), new ItemStack(Material.CRAFTING_TABLE), new ItemStack(Material.DROPPER),
+            new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.REDSTONE)})
+        .register(plugin);
+
+        new VanillaItem(itemGroups.basicMachines, new ItemStack(Material.COPPER_BULB, 4), "COPPER_BULB", RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {null, new ItemStack(Material.COPPER_BLOCK), null,
+            new ItemStack(Material.COPPER_BLOCK), new ItemStack(Material.BLAZE_ROD), new ItemStack(Material.REDSTONE),
+            null, new ItemStack(Material.COPPER_BLOCK), null})
+        .register(plugin);
+
+        new VanillaItem(itemGroups.armor, new ItemStack(Material.WOLF_ARMOR), "WOLF_ARMOR", RecipeType.ARMOR_FORGE,
+        new ItemStack[] {new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE),
+            null, new ItemStack(Material.ARMADILLO_SCUTE), null,
+            null, new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE)})
         .register(plugin);
 
         new RainbowBlock(itemGroups.magicalGadgets, SlimefunItems.RAINBOW_WOOL, RecipeType.ANCIENT_ALTAR,
