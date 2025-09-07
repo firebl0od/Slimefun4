@@ -101,6 +101,7 @@ public class UpdaterService {
 
     UpdaterService(@Nonnull Slimefun plugin, PluginUpdater<PrefixedVersion> updater, SlimefunBranch branch) {
         this.plugin = plugin;
+        this.version = plugin.getDescription().getVersion();
         this.updater = updater;
         this.branch = branch;
     }
