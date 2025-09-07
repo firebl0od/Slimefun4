@@ -1037,6 +1037,12 @@ public final class SlimefunItemSetup {
             SlimefunItems.GOLDEN_HELMET_12K, SlimefunItems.GOLDEN_CHESTPLATE_12K, SlimefunItems.GOLDEN_LEGGINGS_12K, SlimefunItems.GOLDEN_BOOTS_12K
         }, "GOLD_12K", false, new PotionEffect[0][0], plugin);
 
+        new VanillaItem(itemGroups.armor, new ItemStack(Material.WOLF_ARMOR), "WOLF_ARMOR", RecipeType.ARMOR_FORGE,
+        new ItemStack[] {new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE),
+            new ItemStack(Material.ARMADILLO_SCUTE), null, new ItemStack(Material.ARMADILLO_SCUTE),
+            new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE)})
+        .register(plugin);
+
         new SlimefunItem(itemGroups.misc, SlimefunItems.CLOTH, RecipeType.ENHANCED_CRAFTING_TABLE,
         new ItemStack[] {new ItemStack(Material.WHITE_WOOL), null, null, null, null, null, null, null, null},
         new SlimefunItemStack(SlimefunItems.CLOTH, 8))
@@ -2688,24 +2694,24 @@ public final class SlimefunItemSetup {
                 .register(plugin);
 
         new UnplaceableBlock(itemGroups.cargo, SlimefunItems.CRAFTING_MOTOR, RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {new ItemStack(Material.CRAFTING_TABLE), SlimefunItems.BLISTERING_INGOT_3, new ItemStack(Material.CRAFTING_TABLE), SlimefunItems.REDSTONE_ALLOY, SlimefunItems.CARGO_MOTOR, SlimefunItems.REDSTONE_ALLOY, new ItemStack(Material.CRAFTING_TABLE), SlimefunItems.BLISTERING_INGOT_3, new ItemStack(Material.CRAFTING_TABLE)},
+        new ItemStack[] {new ItemStack(Material.CRAFTER), SlimefunItems.BLISTERING_INGOT_3, new ItemStack(Material.CRAFTER), SlimefunItems.REDSTONE_ALLOY, SlimefunItems.CARGO_MOTOR, SlimefunItems.REDSTONE_ALLOY, new ItemStack(Material.CRAFTER), SlimefunItems.BLISTERING_INGOT_3, new ItemStack(Material.CRAFTER)},
         new SlimefunItemStack(SlimefunItems.CRAFTING_MOTOR, 2))
         .register(plugin);
 
         new VanillaAutoCrafter(itemGroups.cargo, SlimefunItems.VANILLA_AUTO_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {null, SlimefunItems.CARGO_MOTOR, null, new ItemStack(Material.CRAFTING_TABLE), SlimefunItems.CRAFTING_MOTOR, new ItemStack(Material.CRAFTING_TABLE), null, SlimefunItems.ELECTRIC_MOTOR, null})
+        new ItemStack[] {null, SlimefunItems.CARGO_MOTOR, null, new ItemStack(Material.CRAFTER), SlimefunItems.CRAFTING_MOTOR, new ItemStack(Material.CRAFTER), null, SlimefunItems.ELECTRIC_MOTOR, null})
         .setCapacity(256)
         .setEnergyConsumption(16)
         .register(plugin);
 
         new EnhancedAutoCrafter(itemGroups.cargo, SlimefunItems.ENHANCED_AUTO_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {null, SlimefunItems.CRAFTING_MOTOR, null, new ItemStack(Material.CRAFTING_TABLE), new ItemStack(Material.DISPENSER), new ItemStack(Material.CRAFTING_TABLE), null, SlimefunItems.CARGO_MOTOR, null})
+        new ItemStack[] {null, SlimefunItems.CRAFTING_MOTOR, null, new ItemStack(Material.CRAFTER), new ItemStack(Material.DISPENSER), new ItemStack(Material.CRAFTER), null, SlimefunItems.CARGO_MOTOR, null})
         .setCapacity(256)
         .setEnergyConsumption(16)
         .register(plugin);
 
         new ArmorAutoCrafter(itemGroups.cargo, SlimefunItems.ARMOR_AUTO_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {null, SlimefunItems.CRAFTING_MOTOR, null, new ItemStack(Material.DISPENSER), new ItemStack(Material.ANVIL), new ItemStack(Material.DISPENSER), new ItemStack(Material.CRAFTING_TABLE), SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.CRAFTING_TABLE)})
+        new ItemStack[] {null, SlimefunItems.CRAFTING_MOTOR, null, new ItemStack(Material.DISPENSER), new ItemStack(Material.ANVIL), new ItemStack(Material.DISPENSER), new ItemStack(Material.CRAFTER), SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.CRAFTER)})
         .setCapacity(256)
         .setEnergyConsumption(32)
         .register(plugin);
