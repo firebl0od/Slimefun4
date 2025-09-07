@@ -65,6 +65,7 @@ public final class SlimefunItems {
     public static final SlimefunItemStack MAGICAL_ZOMBIE_PILLS = new SlimefunItemStack("MAGICAL_ZOMBIE_PILLS", Material.NETHER_WART, "&6Magical Zombie Pills", "", "&eRight Click &7a Zombified Villager", "&eor &7a Zombified Piglin to", "&7instantly cure it from its curse");
 
     public static final SlimefunItemStack WOLF_ARMOR = new SlimefunItemStack("WOLF_ARMOR", Material.WOLF_ARMOR, "&6Wolf Armor");
+    public static final SlimefunItemStack BREEZE_ROD = new SlimefunItemStack("BREEZE_ROD", Material.BREEZE_ROD, "&bBreeze Rod");
 
     public static final SlimefunItemStack FLASK_OF_KNOWLEDGE = new SlimefunItemStack("FLASK_OF_KNOWLEDGE", Material.GLASS_BOTTLE, "&cFlask of Knowledge", "", "&fAllows you to store some of", "&fyour Experience in a Bottle", "&7Cost: &a1 Level");
     public static final SlimefunItemStack FILLED_FLASK_OF_KNOWLEDGE = new SlimefunItemStack("FILLED_FLASK_OF_KNOWLEDGE", Material.EXPERIENCE_BOTTLE, "&aFlask of Knowledge");
