@@ -2089,22 +2089,41 @@ public final class SlimefunItemSetup {
         new ItemStack[] {SlimefunItems.ESSENCE_OF_AFTERLIFE, new ItemStack(Material.EMERALD_BLOCK), SlimefunItems.ESSENCE_OF_AFTERLIFE, SlimefunItems.MAGIC_LUMP_3, SlimefunItems.COMMON_TALISMAN, SlimefunItems.MAGIC_LUMP_3, SlimefunItems.ESSENCE_OF_AFTERLIFE, new ItemStack(Material.EMERALD_BLOCK), SlimefunItems.ESSENCE_OF_AFTERLIFE})
         .register(plugin);
 
-        new VanillaItem(itemGroups.basicMachines, new ItemStack(Material.CRAFTER), "CRAFTER", RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.REDSTONE),
-            new ItemStack(Material.IRON_INGOT), new ItemStack(Material.CRAFTING_TABLE), new ItemStack(Material.DROPPER),
-            new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.REDSTONE)})
-        .register(plugin);
+        if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_21)) {
+            Material crafter = Material.matchMaterial("CRAFTER");
+            Material copperBulb = Material.matchMaterial("COPPER_BULB");
+            Material breezeSpawnEgg = Material.matchMaterial("BREEZE_SPAWN_EGG");
+            Material breezeRod = Material.matchMaterial("BREEZE_ROD");
+            Material ominousBottle = Material.matchMaterial("OMINOUS_BOTTLE");
+            Material trialKey = Material.matchMaterial("TRIAL_KEY");
+            Material vault = Material.matchMaterial("VAULT");
+            Material trialSpawner = Material.matchMaterial("TRIAL_SPAWNER");
+            Material heavyCore = Material.matchMaterial("HEAVY_CORE");
+            Material mace = Material.matchMaterial("MACE");
+            Material wolfArmor = Material.matchMaterial("WOLF_ARMOR");
+            Material armadilloScute = Material.matchMaterial("ARMADILLO_SCUTE");
 
-        new VanillaItem(itemGroups.basicMachines, new ItemStack(Material.COPPER_BULB, 4), "COPPER_BULB", RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {null, new ItemStack(Material.COPPER_BLOCK), null,
-            new ItemStack(Material.COPPER_BLOCK), new ItemStack(Material.BLAZE_ROD), new ItemStack(Material.REDSTONE),
-            null, new ItemStack(Material.COPPER_BLOCK), null})
-        .register(plugin);
+            new VanillaItem(itemGroups.basicMachines, new ItemStack(crafter), "CRAFTER", RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[] {new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.REDSTONE),
+                    new ItemStack(Material.IRON_INGOT), new ItemStack(Material.CRAFTING_TABLE), new ItemStack(Material.DROPPER),
+                    new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.REDSTONE)})
+                .register(plugin);
 
-        new VanillaItem(itemGroups.magicalResources, SlimefunItems.BREEZE_ROD, "BREEZE_ROD", RecipeType.MOB_DROP,
-        new ItemStack[] {null, null, null, null, new CustomItemStack(new ItemStack(Material.BREEZE_SPAWN_EGG), "&aBreeze"), null, null, null, null})
-        .register(plugin);
+            new VanillaItem(itemGroups.basicMachines, new ItemStack(copperBulb, 4), "COPPER_BULB", RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[] {null, new ItemStack(Material.COPPER_BLOCK), null,
+                    new ItemStack(Material.COPPER_BLOCK), new ItemStack(Material.BLAZE_ROD), new ItemStack(Material.REDSTONE),
+                    null, new ItemStack(Material.COPPER_BLOCK), null})
+                .register(plugin);
 
+            new VanillaItem(itemGroups.magicalResources, SlimefunItems.BREEZE_ROD, "BREEZE_ROD", RecipeType.MOB_DROP,
+                new ItemStack[] {null, null, null, null, new CustomItemStack(new ItemStack(breezeSpawnEgg), "&aBreeze"), null, null, null, null})
+                .register(plugin);
+
+            new VanillaItem(itemGroups.magicalResources, new ItemStack(ominousBottle), "OMINOUS_BOTTLE", RecipeType.MAGIC_WORKBENCH,
+                new ItemStack[] {new ItemStack(Material.COBWEB), new ItemStack(breezeRod), new ItemStack(Material.COBWEB),
+                    new ItemStack(Material.SLIME_BALL), new ItemStack(Material.GLASS_BOTTLE), new ItemStack(Material.SLIME_BALL),
+                    null, new ItemStack(Material.FERMENTED_SPIDER_EYE), null})
+                .register(plugin);
         new VanillaItem(itemGroups.magicalResources, SlimefunItems.WIND_CHARGE, "WIND_CHARGE", RecipeType.MOB_DROP,
         new ItemStack[] {null, null, null, null, new CustomItemStack(new ItemStack(Material.BREEZE_SPAWN_EGG), "&aBreeze"), null, null, null, null})
         .register(plugin);
@@ -2123,41 +2142,42 @@ public final class SlimefunItemSetup {
             null, new ItemStack(Material.FERMENTED_SPIDER_EYE), null})
         .register(plugin);
 
-        new VanillaItem(itemGroups.magicalResources, new ItemStack(Material.TRIAL_KEY), "TRIAL_KEY", RecipeType.MAGIC_WORKBENCH,
-        new ItemStack[] {new ItemStack(Material.GOLD_INGOT), SlimefunItems.BREEZE_ROD, new ItemStack(Material.GOLD_INGOT),
-            null, new ItemStack(Material.TRIPWIRE_HOOK), null,
-            null, new ItemStack(Material.IRON_INGOT), null})
-        .register(plugin);
+            new VanillaItem(itemGroups.magicalResources, new ItemStack(trialKey), "TRIAL_KEY", RecipeType.MAGIC_WORKBENCH,
+                new ItemStack[] {new ItemStack(Material.GOLD_INGOT), SlimefunItems.BREEZE_ROD, new ItemStack(Material.GOLD_INGOT),
+                    null, new ItemStack(Material.TRIPWIRE_HOOK), null,
+                    null, new ItemStack(Material.IRON_INGOT), null})
+                .register(plugin);
 
-        new VanillaItem(itemGroups.basicMachines, new ItemStack(Material.VAULT), "VAULT", RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {new ItemStack(Material.COPPER_BLOCK), new ItemStack(Material.IRON_BARS), new ItemStack(Material.COPPER_BLOCK),
-            new ItemStack(Material.IRON_BARS), new ItemStack(Material.CHEST), new ItemStack(Material.IRON_BARS),
-            new ItemStack(Material.COPPER_BLOCK), new ItemStack(Material.IRON_BARS), new ItemStack(Material.COPPER_BLOCK)})
-        .register(plugin);
+            new VanillaItem(itemGroups.basicMachines, new ItemStack(vault), "VAULT", RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[] {new ItemStack(Material.COPPER_BLOCK), new ItemStack(Material.IRON_BARS), new ItemStack(Material.COPPER_BLOCK),
+                    new ItemStack(Material.IRON_BARS), new ItemStack(Material.CHEST), new ItemStack(Material.IRON_BARS),
+                    new ItemStack(Material.COPPER_BLOCK), new ItemStack(Material.IRON_BARS), new ItemStack(Material.COPPER_BLOCK)})
+                .register(plugin);
 
-        new VanillaItem(itemGroups.basicMachines, new ItemStack(Material.TRIAL_SPAWNER), "TRIAL_SPAWNER", RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {new ItemStack(Material.DEEPSLATE_BRICKS), SlimefunItems.BREEZE_ROD, new ItemStack(Material.DEEPSLATE_BRICKS),
-            new ItemStack(Material.IRON_BARS), new ItemStack(Material.SPAWNER), new ItemStack(Material.IRON_BARS),
-            new ItemStack(Material.DEEPSLATE_BRICKS), new ItemStack(Material.TRIAL_KEY), new ItemStack(Material.DEEPSLATE_BRICKS)})
-        .register(plugin);
+            new VanillaItem(itemGroups.basicMachines, new ItemStack(trialSpawner), "TRIAL_SPAWNER", RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[] {new ItemStack(Material.DEEPSLATE_BRICKS), SlimefunItems.BREEZE_ROD, new ItemStack(Material.DEEPSLATE_BRICKS),
+                    new ItemStack(Material.IRON_BARS), new ItemStack(Material.SPAWNER), new ItemStack(Material.IRON_BARS),
+                    new ItemStack(Material.DEEPSLATE_BRICKS), new ItemStack(trialKey), new ItemStack(Material.DEEPSLATE_BRICKS)})
+                .register(plugin);
 
-        new VanillaItem(itemGroups.magicalResources, new ItemStack(Material.HEAVY_CORE), "HEAVY_CORE", RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.IRON_BLOCK),
-            new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.NETHERITE_INGOT), new ItemStack(Material.IRON_BLOCK),
-            new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.IRON_BLOCK)})
-        .register(plugin);
+            new VanillaItem(itemGroups.magicalResources, new ItemStack(heavyCore), "HEAVY_CORE", RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[] {new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.IRON_BLOCK),
+                    new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.NETHERITE_INGOT), new ItemStack(Material.IRON_BLOCK),
+                    new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.IRON_BLOCK)})
+                .register(plugin);
 
-        new VanillaItem(itemGroups.weapons, new ItemStack(Material.MACE), "MACE", RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {null, SlimefunItems.BREEZE_ROD, null,
-            null, SlimefunItems.HEAVY_CORE, null,
-            null, null, null})
-        .register(plugin);
+            new VanillaItem(itemGroups.weapons, new ItemStack(mace), "MACE", RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[] {null, SlimefunItems.BREEZE_ROD, null,
+                    null, SlimefunItems.HEAVY_CORE, null,
+                    null, null, null})
+                .register(plugin);
 
-        new VanillaItem(itemGroups.armor, new ItemStack(Material.WOLF_ARMOR), "WOLF_ARMOR", RecipeType.ARMOR_FORGE,
-        new ItemStack[] {new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE),
-            null, new ItemStack(Material.ARMADILLO_SCUTE), null,
-            null, new ItemStack(Material.ARMADILLO_SCUTE), new ItemStack(Material.ARMADILLO_SCUTE)})
-        .register(plugin);
+            new VanillaItem(itemGroups.armor, new ItemStack(wolfArmor), "WOLF_ARMOR", RecipeType.ARMOR_FORGE,
+                new ItemStack[] {new ItemStack(armadilloScute), new ItemStack(armadilloScute), new ItemStack(armadilloScute),
+                    null, new ItemStack(armadilloScute), null,
+                    null, new ItemStack(armadilloScute), new ItemStack(armadilloScute)})
+                .register(plugin);
+        }
 
         new RainbowBlock(itemGroups.magicalGadgets, SlimefunItems.RAINBOW_WOOL, RecipeType.ANCIENT_ALTAR,
         new ItemStack[] {new ItemStack(Material.WHITE_WOOL), new ItemStack(Material.WHITE_WOOL), new ItemStack(Material.WHITE_WOOL), new ItemStack(Material.WHITE_WOOL), SlimefunItems.RAINBOW_RUNE, new ItemStack(Material.WHITE_WOOL), new ItemStack(Material.WHITE_WOOL), new ItemStack(Material.WHITE_WOOL), new ItemStack(Material.WHITE_WOOL)},
@@ -2751,28 +2771,31 @@ public final class SlimefunItemSetup {
                 new SlimefunItemStack(SlimefunItems.RAINBOW_LEATHER, 4))
                 .register(plugin);
 
-        new UnplaceableBlock(itemGroups.cargo, SlimefunItems.CRAFTING_MOTOR, RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {new ItemStack(Material.CRAFTER), SlimefunItems.BLISTERING_INGOT_3, new ItemStack(Material.CRAFTER), SlimefunItems.REDSTONE_ALLOY, SlimefunItems.CARGO_MOTOR, SlimefunItems.REDSTONE_ALLOY, new ItemStack(Material.CRAFTER), SlimefunItems.BLISTERING_INGOT_3, new ItemStack(Material.CRAFTER)},
-        new SlimefunItemStack(SlimefunItems.CRAFTING_MOTOR, 2))
-        .register(plugin);
+        Material crafterMaterial = Material.matchMaterial("CRAFTER");
+        if (crafterMaterial != null) {
+            new UnplaceableBlock(itemGroups.cargo, SlimefunItems.CRAFTING_MOTOR, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[] {new ItemStack(crafterMaterial), SlimefunItems.BLISTERING_INGOT_3, new ItemStack(crafterMaterial), SlimefunItems.REDSTONE_ALLOY, SlimefunItems.CARGO_MOTOR, SlimefunItems.REDSTONE_ALLOY, new ItemStack(crafterMaterial), SlimefunItems.BLISTERING_INGOT_3, new ItemStack(crafterMaterial)},
+                new SlimefunItemStack(SlimefunItems.CRAFTING_MOTOR, 2))
+                .register(plugin);
 
-        new VanillaAutoCrafter(itemGroups.cargo, SlimefunItems.VANILLA_AUTO_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {null, SlimefunItems.CARGO_MOTOR, null, new ItemStack(Material.CRAFTER), SlimefunItems.CRAFTING_MOTOR, new ItemStack(Material.CRAFTER), null, SlimefunItems.ELECTRIC_MOTOR, null})
-        .setCapacity(256)
-        .setEnergyConsumption(16)
-        .register(plugin);
+            new VanillaAutoCrafter(itemGroups.cargo, SlimefunItems.VANILLA_AUTO_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[] {null, SlimefunItems.CARGO_MOTOR, null, new ItemStack(crafterMaterial), SlimefunItems.CRAFTING_MOTOR, new ItemStack(crafterMaterial), null, SlimefunItems.ELECTRIC_MOTOR, null})
+                .setCapacity(256)
+                .setEnergyConsumption(16)
+                .register(plugin);
 
-        new EnhancedAutoCrafter(itemGroups.cargo, SlimefunItems.ENHANCED_AUTO_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {null, SlimefunItems.CRAFTING_MOTOR, null, new ItemStack(Material.CRAFTER), new ItemStack(Material.DISPENSER), new ItemStack(Material.CRAFTER), null, SlimefunItems.CARGO_MOTOR, null})
-        .setCapacity(256)
-        .setEnergyConsumption(16)
-        .register(plugin);
+            new EnhancedAutoCrafter(itemGroups.cargo, SlimefunItems.ENHANCED_AUTO_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[] {null, SlimefunItems.CRAFTING_MOTOR, null, new ItemStack(crafterMaterial), new ItemStack(Material.DISPENSER), new ItemStack(crafterMaterial), null, SlimefunItems.CARGO_MOTOR, null})
+                .setCapacity(256)
+                .setEnergyConsumption(16)
+                .register(plugin);
 
-        new ArmorAutoCrafter(itemGroups.cargo, SlimefunItems.ARMOR_AUTO_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {null, SlimefunItems.CRAFTING_MOTOR, null, new ItemStack(Material.DISPENSER), new ItemStack(Material.ANVIL), new ItemStack(Material.DISPENSER), new ItemStack(Material.CRAFTER), SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.CRAFTER)})
-        .setCapacity(256)
-        .setEnergyConsumption(32)
-        .register(plugin);
+            new ArmorAutoCrafter(itemGroups.cargo, SlimefunItems.ARMOR_AUTO_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[] {null, SlimefunItems.CRAFTING_MOTOR, null, new ItemStack(Material.DISPENSER), new ItemStack(Material.ANVIL), new ItemStack(Material.DISPENSER), new ItemStack(crafterMaterial), SlimefunItems.ELECTRIC_MOTOR, new ItemStack(crafterMaterial)})
+                .setCapacity(256)
+                .setEnergyConsumption(32)
+                .register(plugin);
+        }
 
         new ProduceCollector(itemGroups.electricity, SlimefunItems.PRODUCE_COLLECTOR, RecipeType.ENHANCED_CRAFTING_TABLE,
         new ItemStack[] {null, new ItemStack(Material.HAY_BLOCK), null, new ItemStack(Material.BUCKET), SlimefunItems.MEDIUM_CAPACITOR, new ItemStack(Material.BUCKET), SlimefunItems.ALUMINUM_BRASS_INGOT, SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ALUMINUM_BRASS_INGOT})

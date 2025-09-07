@@ -99,19 +99,25 @@ public class ButcherAndroidListener implements Listener {
             drops.add(new ItemStack(Material.RED_MUSHROOM, 1 + random.nextInt(2)));
         }
 
-        if (entityType == VersionedEntityType.ARMADILLO) {
-            drops.add(new ItemStack(Material.ARMADILLO_SCUTE, 1 + random.nextInt(2)));
+        Material scute = Material.matchMaterial("ARMADILLO_SCUTE");
+        if (entityType == VersionedEntityType.ARMADILLO && scute != null) {
+            drops.add(new ItemStack(scute, 1 + random.nextInt(2)));
         }
 
+        Material breezeRod = Material.matchMaterial("BREEZE_ROD");
+        Material windCharge = Material.matchMaterial("WIND_CHARGE");
         if (entityType == VersionedEntityType.BREEZE) {
-            drops.add(new ItemStack(Material.BREEZE_ROD));
-            if (random.nextInt(3) == 0) {
-                drops.add(new ItemStack(Material.WIND_CHARGE));
+            if (breezeRod != null) {
+                drops.add(new ItemStack(breezeRod));
+            }
+            if (windCharge != null && random.nextInt(3) == 0) {
+                drops.add(new ItemStack(windCharge));
             }
         }
 
-        if (entityType == VersionedEntityType.CREAKING) {
-            drops.add(new ItemStack(Material.CREAKING_HEART));
+        Material creakingHeart = Material.matchMaterial("CREAKING_HEART");
+        if (entityType == VersionedEntityType.CREAKING && creakingHeart != null) {
+            drops.add(new ItemStack(creakingHeart));
         }
     }
 }
