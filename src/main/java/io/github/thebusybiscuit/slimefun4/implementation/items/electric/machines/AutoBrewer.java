@@ -48,6 +48,14 @@ public class AutoBrewer extends AContainer implements NotHopperable {
         potionRecipes.put(Material.GOLDEN_CARROT, PotionType.NIGHT_VISION);
         potionRecipes.put(Material.TURTLE_HELMET, PotionType.TURTLE_MASTER);
         potionRecipes.put(Material.PHANTOM_MEMBRANE, PotionType.SLOW_FALLING);
+        potionRecipes.put(Material.SLIME_BLOCK, VersionedPotionType.OOZING);
+        potionRecipes.put(Material.COBWEB, VersionedPotionType.WEAVING);
+        potionRecipes.put(Material.STONE, VersionedPotionType.INFESTED);
+
+        Material breezeRod = Material.matchMaterial("BREEZE_ROD");
+        if (breezeRod != null) {
+            potionRecipes.put(breezeRod, VersionedPotionType.WIND_CHARGED);
+        }
 
         fermentations.put(VersionedPotionType.SWIFTNESS, PotionType.SLOWNESS);
         fermentations.put(VersionedPotionType.LEAPING, PotionType.SLOWNESS);

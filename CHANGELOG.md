@@ -42,6 +42,7 @@
 
 #### Additions
 * Produce Collector can brush Armadillos for Armadillo Scutes on 1.21+
+* Auto-Brewer can brew Oozing, Weaving, Wind Charging and Infestation potions
 
 #### Changes
 * Restrict Minecraft 1.21 support to patches up to 1.21.7

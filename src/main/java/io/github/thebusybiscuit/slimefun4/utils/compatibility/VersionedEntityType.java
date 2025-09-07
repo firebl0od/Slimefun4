@@ -16,6 +16,7 @@ public class VersionedEntityType {
     public static final EntityType ARMADILLO;
     public static final EntityType BOGGED;
     public static final EntityType BREEZE;
+    public static final EntityType BREEZE_WIND_CHARGE;
     public static final EntityType CREAKING;
     public static final EntityType WIND_CHARGE;
 
@@ -32,6 +33,7 @@ public class VersionedEntityType {
         ARMADILLO = getKey("armadillo");
         BOGGED = getKey("bogged");
         BREEZE = getKey("breeze");
+        BREEZE_WIND_CHARGE = getKey("breeze_wind_charge");
 
         // Added in 1.21.2
         CREAKING = getKey("creaking");
