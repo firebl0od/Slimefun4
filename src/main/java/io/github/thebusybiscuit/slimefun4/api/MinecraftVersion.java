@@ -60,7 +60,7 @@ public enum MinecraftVersion {
      * ("The Tricky Trials Update")
      */
 
-    MINECRAFT_1_21(21, 0, 7, "1.21.x"),
+    MINECRAFT_1_21(21, 0, 8, "1.21.x"),
 
 
     /**
