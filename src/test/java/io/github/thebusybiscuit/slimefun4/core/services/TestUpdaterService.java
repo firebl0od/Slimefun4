@@ -8,10 +8,13 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import io.github.bakedlibs.dough.updater.PluginUpdater;
+import io.github.bakedlibs.dough.versions.PrefixedVersion;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunBranch;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 import org.mockbukkit.mockbukkit.MockBukkit;
+import org.mockito.Mockito;
 
 class TestUpdaterService {
 
@@ -66,5 +69,18 @@ class TestUpdaterService {
         Assertions.assertEquals(SlimefunBranch.UNKNOWN, service.getBranch());
         Assertions.assertFalse(service.getBranch().isOfficial());
         Assertions.assertEquals(-1, service.getBuildNumber());
+    }
+
+    @Test
+    @DisplayName("Test if auto-update config is respected")
+    void testAutoUpdateConfig() {
+        PluginUpdater<PrefixedVersion> updater = Mockito.mock(PluginUpdater.class);
+        UpdaterService service = new UpdaterService(plugin, updater, SlimefunBranch.DEVELOPMENT);
+
+        Slimefun.getCfg().setValue("options.auto-update", false);
+        Assertions.assertFalse(service.isEnabled());
+
+        Slimefun.getCfg().setValue("options.auto-update", true);
+        Assertions.assertTrue(service.isEnabled());
     }
 }
