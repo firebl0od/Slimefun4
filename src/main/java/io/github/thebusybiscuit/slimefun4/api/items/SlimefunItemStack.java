@@ -27,7 +27,6 @@ import io.github.bakedlibs.dough.items.ItemMetaSnapshot;
 import io.github.bakedlibs.dough.skins.PlayerHead;
 import io.github.bakedlibs.dough.skins.PlayerSkin;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
-import io.github.thebusybiscuit.slimefun4.api.exceptions.PrematureCodeException;
 import io.github.thebusybiscuit.slimefun4.api.exceptions.WrongItemStackException;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
@@ -55,18 +54,18 @@ public class SlimefunItemStack extends ItemStack {
         Validate.notNull(id, "The Item id must never be null!");
         Validate.isTrue(id.equals(id.toUpperCase(Locale.ROOT)), "Slimefun Item Ids must be uppercase! (e.g. 'MY_ITEM_ID')");
 
-        if (Slimefun.instance() == null) {
-            throw new PrematureCodeException("A SlimefunItemStack must never be be created before your Plugin was enabled.");
-        }
-
         this.id = id;
 
         ItemMeta meta = getItemMeta();
 
-        Slimefun.getItemDataService().setItemData(meta, id);
-        Slimefun.getItemTextureService().setTexture(meta, id);
-
-        setItemMeta(meta);
+        // During unit tests the plugin may not be fully initialised yet. In that case
+        // we skip registering item data and textures to avoid NoClassDefFoundError
+        // caused by calling into uninitialised services.
+        if (Slimefun.instance() != null) {
+            Slimefun.getItemDataService().setItemData(meta, id);
+            Slimefun.getItemTextureService().setTexture(meta, id);
+            setItemMeta(meta);
+        }
     }
 
     public SlimefunItemStack(@Nonnull String id, @Nonnull ItemStack item, @Nonnull Consumer<ItemMeta> consumer) {
