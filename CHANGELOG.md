@@ -55,6 +55,7 @@
 
 * Butcher Android collects Breeze Rods, Wind Charges and mushrooms from new mobs
 * Butcher Android collects Creaking Hearts from Creakings
+* Wind Charges, Armadillo Scutes and Creaking Hearts are listed as vanilla items in the Slimefun guide
 
 
 #### Changes
