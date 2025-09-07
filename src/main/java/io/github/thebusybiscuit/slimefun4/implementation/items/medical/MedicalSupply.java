@@ -39,6 +39,12 @@ public abstract class MedicalSupply<T extends ItemHandler> extends SimpleSlimefu
         curedEffects.add(VersionedPotionEffectType.NAUSEA);
         curedEffects.add(PotionEffectType.BLINDNESS);
         curedEffects.add(PotionEffectType.BAD_OMEN);
+
+        // Added in 1.21
+        curedEffects.add(VersionedPotionEffectType.OOZING);
+        curedEffects.add(VersionedPotionEffectType.WEAVING);
+        curedEffects.add(VersionedPotionEffectType.WIND_CHARGED);
+        curedEffects.add(VersionedPotionEffectType.INFESTED);
     }
 
     /**
