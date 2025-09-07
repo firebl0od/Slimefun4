@@ -92,6 +92,18 @@ public final class SlimefunItems {
         "MACE",
         VersionedMaterial.MACE == null ? Material.DIAMOND_SWORD : VersionedMaterial.MACE,
         "&6Mace");
+    public static final SlimefunItemStack WIND_CHARGE = new SlimefunItemStack(
+        "WIND_CHARGE",
+        Material.matchMaterial("WIND_CHARGE") == null ? Material.FIRE_CHARGE : Material.matchMaterial("WIND_CHARGE"),
+        "&bWind Charge");
+    public static final SlimefunItemStack ARMADILLO_SCUTE = new SlimefunItemStack(
+        "ARMADILLO_SCUTE",
+        Material.matchMaterial("ARMADILLO_SCUTE") == null ? Material.TURTLE_SCUTE : Material.matchMaterial("ARMADILLO_SCUTE"),
+        "&6Armadillo Scute");
+    public static final SlimefunItemStack CREAKING_HEART = new SlimefunItemStack(
+        "CREAKING_HEART",
+        Material.matchMaterial("CREAKING_HEART") == null ? Material.GHAST_TEAR : Material.matchMaterial("CREAKING_HEART"),
+        "&cCreaking Heart");
     public static final SlimefunItemStack FLASK_OF_KNOWLEDGE = new SlimefunItemStack("FLASK_OF_KNOWLEDGE", Material.GLASS_BOTTLE, "&cFlask of Knowledge", "", "&fAllows you to store some of", "&fyour Experience in a Bottle", "&7Cost: &a1 Level");
     public static final SlimefunItemStack FILLED_FLASK_OF_KNOWLEDGE = new SlimefunItemStack("FILLED_FLASK_OF_KNOWLEDGE", Material.EXPERIENCE_BOTTLE, "&aFlask of Knowledge");
 
