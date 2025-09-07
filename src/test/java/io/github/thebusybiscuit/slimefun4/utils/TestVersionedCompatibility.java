@@ -1,0 +1,43 @@
+package io.github.thebusybiscuit.slimefun4.utils;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.Test;
+
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEnchantment;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEntityType;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionType;
+
+class TestVersionedCompatibility {
+
+    @Test
+    void testNewEntityTypes() {
+        assertNotNull(VersionedEntityType.ARMADILLO);
+        assertNotNull(VersionedEntityType.BOGGED);
+        assertNotNull(VersionedEntityType.BREEZE);
+    }
+
+    @Test
+    void testNewEnchantments() {
+        assertNotNull(VersionedEnchantment.DENSITY);
+        assertNotNull(VersionedEnchantment.BREACH);
+        assertNotNull(VersionedEnchantment.WIND_BURST);
+    }
+
+    @Test
+    void testNewPotionEffects() {
+        assertNotNull(VersionedPotionEffectType.OOZING);
+        assertNotNull(VersionedPotionEffectType.WEAVING);
+        assertNotNull(VersionedPotionEffectType.WIND_CHARGED);
+        assertNotNull(VersionedPotionEffectType.INFESTED);
+    }
+
+    @Test
+    void testNewPotionTypes() {
+        assertNotNull(VersionedPotionType.OOZING);
+        assertNotNull(VersionedPotionType.WEAVING);
+        assertNotNull(VersionedPotionType.WIND_CHARGED);
+        assertNotNull(VersionedPotionType.INFESTED);
+    }
+}
